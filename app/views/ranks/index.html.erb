@@ -1,0 +1,11 @@
+<h1>All Ranks</h1>
+
+<ul>
+
+  <% @ranks.each do |rank| %>
+  
+  <li><%= rank.name %>: <%= rank.level %> (<%= rank.threshold %> xp)</li>
+
+  <% end %>
+
+</ul>

@@ -1,0 +1,15 @@
+<h1>All Users</h1>
+
+<% @users.each do |user| %>
+
+<h2><%= user.username %></h2>
+
+<p>
+  Rank: <%= user.rank.name %><br>
+  Level: <%= user.role.name %><br>
+  XP: <%= user.xp %>
+</p>
+
+<hr>
+
+<% end %>

@@ -1,0 +1,5 @@
+* Work
+| Date | Time  | Notes                              |
+|------+-------+------------------------------------|
+| 23-3 | 1h30m | Basic stuff for User Rank and Role |
+|      |       |                                    |
