@@ -1,0 +1,8 @@
+<h1>Profile for <%= @user.username %></h1>
+
+<p>
+  Rank: <%= @user.rank.name %><br>
+  Level: <%= @user.role.name %><br>
+  XP: <%= @user.xp %><br>
+  Password: <%= @user.password_digest %>
+</p>
