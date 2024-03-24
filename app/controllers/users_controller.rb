@@ -14,7 +14,9 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to users_path, notice: "Successfully created User"
+      session[:user_id] = @user.id
     else
+      flash.now[:alert] = "Something is wrong"
       render :new
     end
   end
@@ -28,6 +30,10 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if Current.user.id != params[:id].to_i && Current.user.role.permission < 4
+      redirect_to root_path, notice: "You dont have permission to do that: #{params[:id]} != #{Current.user.id}"
+    end
+    
     @user = User.find_by(id: params[:id])
 
     if not @user.present?

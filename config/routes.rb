@@ -6,8 +6,16 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "users#index"
+
   resources :users
   resources :ranks
   resources :roles
+  #resources :sessions
+
+
+  get "sessions/new" => "sessions#new", as: :new_session
+  post "sessions" => "sessions#create", as: :sessions
+  delete "session" => "sessions#destroy", as: :session
+  
 end
