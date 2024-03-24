@@ -1,5 +1,7 @@
 class RanksController < ApplicationController
 
+  before_action :require_admin
+  
   def index
     @ranks = Rank.all
   end

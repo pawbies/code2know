@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def edit
     if Current.user.id != params[:id].to_i && Current.user.role.permission < 4
-      redirect_to root_path, notice: "You dont have permission to do that: #{params[:id]} != #{Current.user.id}"
+      redirect_to root_path, notice: "You dont have permission to do that"
     end
     
     @user = User.find_by(id: params[:id])

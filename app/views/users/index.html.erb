@@ -2,12 +2,20 @@
 
 <% @users.each do |user| %>
 
-<h2><%= link_to user.username, user_path(id: user.id) %></h2>
+<h2>
+  <%= link_to user.username, user_path(id: user.id) %>
+</h2>
 
 <p>
   Rank: <%= user.rank.name %><br>
   Level: <%= user.role.name %><br>
   XP: <%= user.xp %>
+  <br>
+
+  <!-- idk why emacs highlights the '>' sign as an error because it clearly works-->
+  <% if Current.user && (Current.user.role.permission >= 4 || user.id == Current.user.id) %>
+  <%= link_to "Edit", edit_user_path(id: user.id) %>
+  <% end %>
 </p>
 
 <hr>
