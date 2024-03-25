@@ -1,0 +1,17 @@
+<h1>Edit Category <%= @category.name %></h1>
+
+<%= form_with model: @category, url: category_path(id: @category.id), method: :patch do |form| %>
+
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div>
+  <%= form.submit "Update" %>
+</div>
+
+<% end %>
+
+
+<%= button_to "Delete Category", category_path(id: @category.id), method: :delete %>

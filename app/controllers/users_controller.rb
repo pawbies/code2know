@@ -52,6 +52,19 @@ class UsersController < ApplicationController
     redirect_to users_path, notice: "Updated successfully"
   end
 
+  def destroy
+    require_user_or_admin params[:id]
+
+    if Current.user.id == params[:id]
+      Current.user = nil
+      sessions[:user_id] = nil
+    end
+
+    User.find_by(id: params[:id]).destroy
+    
+    redirect_to users_path, notice: "Deleted user"
+  end
+
   private
 
   def user_params
