@@ -1,0 +1,12 @@
+<h1>All Questions</h1>
+
+<% @questions.each do |question| %>
+
+<div>
+  <h3><%= question.heading %></h3>
+  <p><%= question.text %>
+</div>
+
+<hr>
+
+<% end %>

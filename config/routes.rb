@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :ranks
   resources :roles
   resources :categories
+  resources :questions
 
 
   get "sessions/new" => "sessions#new", as: :new_session

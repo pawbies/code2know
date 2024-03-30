@@ -1,0 +1,21 @@
+<h1>Create new Question</h1>
+
+<%= form_with model: @question, url: questions_path do |form| %>
+
+<div>
+  <%= form.label :heading %>
+  <%= form.text_field :heading, required: true %>
+</div>
+
+<div>
+  <%= form.label :text %>
+  <%= form.rich_text_area :text, required: true %>
+</div>
+
+<div>
+  <%= form.submit "Create new Question" %>
+</div>
+
+<% end %>
+
+
