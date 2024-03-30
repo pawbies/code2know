@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
       Current.user = User.find_by(id: session[:user_id])
     end
   end
-
+  
   def require_admin
     if Current.user == nil || Current.user.role.permission < 4
       redirect_to new_session_path, notice: "Need to be an admin for that"

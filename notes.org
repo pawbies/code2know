@@ -3,5 +3,5 @@
 |------+-------+--------------------------------------|
 | 23-3 | 2h30m | Basic stuff for User Rank and Role   |
 | 24-3 | 2h00m | Log in and out and some minor things |
-| 30-3 | 0h30m | Question Model                       |
+| 30-3 | 1h00m | Question Model                       |
 |      |       |                                      |

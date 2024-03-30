@@ -30,6 +30,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+
+    if Current.user.nil?
+      redirect_to new_session_path, notice: "Need to be logged in!"; return
+    end
+    
     if Current.user.id != params[:id].to_i && Current.user.role.permission < 4
       redirect_to root_path, notice: "You dont have permission to do that"
     end

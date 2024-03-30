@@ -4,11 +4,16 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    require_some_user()
     @question = Question.new
   end
 
   def create
+
+    require_some_user()
+    
     @question = Question.new(question_params)
+    @question.user = Current.user
 
     if @question.save
       redirect_to questions_path, notice: "Successfully created Question"
@@ -18,6 +23,9 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def show
+    @question = Question.find_by(id: params[:id])
+  end
 
   private
 
