@@ -6,3 +6,17 @@
   XP: <%= @user.xp %><br>
   Password: <%= @user.password_digest %>
 </p>
+
+<h3>Users Questions:</h3>
+
+<ul>
+
+<% @user.questions.each do |question| %>
+
+<li>
+  <%= link_to question.heading, question_path(id: question.id) %>
+</li>
+
+<% end %>
+
+</ul>

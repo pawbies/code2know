@@ -16,8 +16,15 @@ class ApplicationController < ActionController::Base
 
   def require_user_or_admin id
     if Current.user == nil || (Current.user.id != id.to_i && Current.user.role.permission < 4)
-      redirect_to new_session_path, notice: "Need to be an logged in for that"
+      redirect_to new_session_path, notice: "Need to be logged in for that"
     end
   end
-  
+
+  def require_some_user
+
+    if Current.user.nil?
+      redirect_to new_session_path, notice: "Need to be logged in for that"
+    end
+    
+  end
 end

@@ -1,0 +1,20 @@
+<h1>Edit Question <%= @question.heading %></h1>
+
+<%= form_with model: @question, url: question_path(id: @question.id), method: :patch do |form| %>
+
+<div>
+  <%= form.label :heading %>
+  <%= form.text_field :heading, required: true %>
+</div>
+
+<div>
+  <%= form.label :text %>
+  <%= form.rich_text_area :text, required: true %>
+</div>
+
+<div>
+  <%= form.submit "Update Question" %>
+</div>
+
+<% end %>
+

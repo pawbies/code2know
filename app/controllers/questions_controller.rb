@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    require_some_user()
+    require_some_user
     @question = Question.new
   end
 
@@ -25,6 +25,45 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by(id: params[:id])
+  end
+
+  def edit
+    @question = Question.find_by(id: params[:id])
+    if @question.nil?
+      redirect_to questions_path, notice: "Question not found"
+    end
+    
+    require_user_or_admin @question.user.id
+    
+  end
+
+  def update
+    @question = Question.find_by(id: params[:id])
+    if @question.nil?
+      redirect_to questions_path, notice: "Question not found"
+    end
+
+    require_user_or_admin @question.user.id
+
+    if @question.update(question_params)
+      redirect_to question_path(id: @question.id), notice: "Question updated"
+    else
+      flash.now[:notice] = "Something went wrong"
+      render :edit
+    end
+  end
+
+  def destory
+    @question = Question.find_by(id: params[:id])
+    if @question.nil?
+      redirect_to questions_path, notice: "Question not found"
+    end
+
+    require_user_or_admin @question.user.id
+
+    @question.destroy
+
+    redirect_to questions_path, notice: "Deleted Question"
   end
 
   private
