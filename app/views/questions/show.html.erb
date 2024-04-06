@@ -1,7 +1,7 @@
 <h1><%= @question.heading %></h1>
 
 <div>
-  <%= @question.text %>
+  <%= @question.text.nil? ? "Not available" : @question.text %>
 </div>
 
 <small>By <%= link_to @question.user.username, user_path(id: @question.user.id) %></small>
