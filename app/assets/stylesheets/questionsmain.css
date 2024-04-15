@@ -6,8 +6,15 @@ body{
 }
 
 header{
-    background-color: grey;
+    background-color: #1D2022;
     width: 100%;
     position: fixed;
     height: 60px;
+    display: inline;
+    border-bottom: 3px solid #353B40;
+    top: 0;
+    left: 0;
+}
+#title{
+    font-size: 79%;
 }
