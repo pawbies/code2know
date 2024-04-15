@@ -9,42 +9,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    
-<!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
 
   </head>
 
   <body>
+  
+  <%= yield %>
 
-    <%= render partial: "shared/flash" %>
-
-    <% if Current.user %>
-
-    <p>Logged in as <b><%= Current.user.username %></b></p>
-
-    <%= button_to "Log out", session_path, method: :delete %>
-
-    <% else %>
-
-    <%= button_to "Log in", new_session_path, method: :get %>
-    
-    <% end %>
-
-    <hr>
-    
-    <div>
-      <%= yield %>
-    </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', (event) => {
-	  document.querySelectorAll('pre').forEach((el) => {
-	      hljs.highlightElement(el);
-	  });
-      });
-    </script>
   </body>
 </html>

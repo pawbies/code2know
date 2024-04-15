@@ -1,0 +1,18 @@
+
+    <%= render partial: "shared/flash" %>
+
+    <% if Current.user %>
+
+    <p>Logged in as <b><%= Current.user.username %></b></p>
+
+    <%= button_to "Log out", session_path, method: :delete %>
+
+    <% else %>
+
+    <%= button_to "Log in", new_session_path, method: :get %>
+    
+    <% end %>
+
+    <hr>
+    
+    <div>

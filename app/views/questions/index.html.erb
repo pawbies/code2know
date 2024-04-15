@@ -1,13 +1,1 @@
-<h1>All Questions</h1>
-
-<% @questions.each do |question| %>
-
-<div>
-  <h3><%= question.heading %></h3>
-  <p><%= question.text.nil? ? "Not available" : question.text %></p>
-  <small>By <%= question.user.username %></small>
-</div>
-
-<hr>
-
-<% end %>
+<%= stylesheet_link_tag "questions", "data-turbo-track": "reload" %>
