@@ -11,8 +11,8 @@ class User < ApplicationRecord
   private
 
   def default_values
-    self.role = Role.find_by(permission: 1)
-    self.rank = Rank.find_by(level: 1)
-    self.xp = 0
+    self.role ||= Role.find_by(permission: 1)
+    self.rank ||= Rank.find_by(level: 1)
+    self.xp   ||= 0
   end
 end
