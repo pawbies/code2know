@@ -46,8 +46,10 @@ header{
     transition: all 0.5s;
     display: grid;
     justify-content: center;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
+    margin: 0 0 700px 0;
+    padding-bottom: 300px;
     /* display: none; */
 
 }
@@ -115,6 +117,7 @@ header{
     justify-content: center;
     align-items: center;
     display: none;
+
 }
 #loginbtn{
     background-color: #23272A;
