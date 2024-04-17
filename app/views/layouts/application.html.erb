@@ -20,11 +20,10 @@
         <% end %>
     </header>
     <div id="leftsidebar">
-
-    <div id="buttons">
-      <!--<button id="askbtn">+ ASK A QUESTION</button>-->
+    <div id="mainbutton">
       <%= button_to "+ ASK A QUESTION", new_question_path, id: "askbtn", method: :get %>
-      
+    </div>
+    <div id="buttons">
       <%= button_to "Home", root_path, class: "sidebtn", method: :get %>
       <%= button_to "Find questions", root_path, class: "sidebtn", method: :get %>
       <%= button_to "Categories", categories_path, class: "sidebtn", method: :get %>

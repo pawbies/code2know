@@ -12,12 +12,19 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #415368;
 }
-#startcontent{
+#content{
+
     position: relative;
-    margin: 80px 0 0 210px;
-    width: calc(100%-200px);
+    margin: 80px 0 0 0px;
+    width: calc(100%);
     height: calc(100%-60px);
+    transition: all 0.5s;
     /* background-color: grey !important; */
+}
+form.button_to{
+    /* background-color: blue; */
+    width: 200px;
+    height: 50px;
 }
 /* For application.html.erb */
 body{
@@ -51,7 +58,6 @@ header{
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    display: grid;
     justify-content: center;
     overflow-y: auto;
     overflow-x: hidden;
@@ -60,42 +66,24 @@ header{
     /* display: none; */
 
 }
+#mainbutton{
+    width: 100%;
+    height: 60px;
+    /* background-color: darkcyan; */
+    margin-top: 100px;
+}
 #buttons{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: auto;
-    grid-gap: 0; 
     max-height: 500px;
     min-height: 200px;
     width: 100%;
-    /* background-color: green; */
+    /* background-color: cornsilk; */
+    margin-top: 50px;
     margin-bottom: 100px;
 }
-
-#askbtn{
-    margin-top: 100px;
-    width: auto;
-    padding: 15px 37px 30px 37px;
-    background-color: #00487D;
-    color: white;
-    font-size: 12px;
-    border: thin solid transparent;
-    border-radius: 8px;
-    position: relative;
-    transition: all 0.5s;
-    display: none;
-    height: 40px;
-    margin-bottom: 50px;
-
-
-}
-#askbtn:hover{
-    background-color: #1267A6;
-    cursor: pointer;
-}
 .sidebtn{
-    width: auto;
-    padding: 15px 37px 30px 37px;
+    width: 190px;
+    padding: 10px 37px 10px 37px;
+    margin-left: 5px;
     background-color: #23272A;
     color: white;
     font-size: 12px;
@@ -113,28 +101,50 @@ header{
     cursor: pointer;
 }
 
+#askbtn{
+    width: 190px;
+    padding: 10px 37px 10px 37px;
+    margin-left: 5px;
+    background-color: #00487D;
+    color: white;
+    font-size: 12px;
+    border: thin solid transparent;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.5s;
+    display: none;
+    height: 40px;
+}
+#askbtn:hover{
+    background-color: #1267A6;
+    cursor: pointer;
+}
+
+
 #loginsidebar{
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 200px;
+    width: 0px;
     background-color: #111316;
     height: 60px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
+    transition: all 0.5s;
+    z-index: 1;
 
 }
 #loginbtn{
     background-color: #23272A;
     border: thin solid transparent;
-    padding: 10px 35px 10px 35px;
-    color: white;
+    /* padding: 10px 35px 10px 35px; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 14px;
     border-radius: 5px;
+    color: transparent;
+    margin: 5px 0 0 5px;
+    position: fixed;
     transition: all 0.5s;
+    display: none;
 
 
 }
@@ -144,7 +154,6 @@ header{
 }
 @media (min-width: 600px) {
     #leftsidebar{
-        /* display: block; */
         width: 200px;
     }
     #askbtn{
@@ -156,10 +165,23 @@ header{
         
     }
     #loginsidebar{
-        display: block;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 200px;
+    }
+    #loginbtn{
+        width: 190px;
+        padding: 10px 37px 10px 37px;
+        color: white;
+        display:block;
+        
+    }
+    #content{
+        position: relative;
+        margin: 80px 0 0 210px;
+        width: calc(100%-200px);
+        height: calc(100%-60px);
+        
+        /* background-color: grey !important; */
     }
 
     
