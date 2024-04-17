@@ -1,12 +1,24 @@
 <%= stylesheet_link_tag "questions_index.css", "data-turbo-track": "reload" %>
 <div id="content">
 <h1 id="quest-h1">Recent Questions</h1>
-
     <div class="start-question">
         <span>Schnurliver</span>
         <h2>How to center a div?</h2>
         <p>How to center my div?</p>
         <p>Thanks for every answer :)</p>
+        <div class="codeblock">
+        <pre>
+div
+{
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+        </pre>
+        </div>
+        <div class="codeblock-copy">
+            <span>Copy Code</span>
+        </div>
     </div>
 
 <% @questions.each do |question| %>

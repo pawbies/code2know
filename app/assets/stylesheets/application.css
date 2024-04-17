@@ -12,6 +12,21 @@
     opacity: 0.5;
     font-size: 12px;
 }
+.codeblock{
+    background-color: #353B3F;
+    width: 70%;
+    max-width: 75%;
+    padding: 3px 20px 0px 20px;
+    border-radius: 5px 5px 0 0;
+}
+.codeblock-copy{
+    width: 70%;
+    max-width: 75%;
+    background-color: #111316;
+    padding: 10px 20px 10px 20px;
+    margin-top: -12px;
+    border-radius: 0px 0px 5px 5px;
+}
 
 /* For every Site */
 #quest-h1{
