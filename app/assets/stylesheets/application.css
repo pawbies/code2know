@@ -1,3 +1,18 @@
+.start-question{
+    position: relative;
+    width: 45%;
+    height: auto;
+    background-color: #1D2022;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.start-question span{
+    opacity: 0.5;
+    font-size: 12px;
+}
+
 /* For every Site */
 #quest-h1{
     position: relative;
