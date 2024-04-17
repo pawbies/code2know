@@ -1,3 +1,0 @@
-<h1>Create new Rank</h1>
-
-<%= form_with model: @rank, %>
