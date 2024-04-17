@@ -5,6 +5,13 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
+#loggedinas{
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #415368;
+}
 #startcontent{
     position: relative;
     margin: 80px 0 0 210px;

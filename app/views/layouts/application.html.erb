@@ -15,6 +15,9 @@
 
     <header>
         <h1 id="title">Code2Know</h1>
+        <% if !Current.user.nil? %>
+        <p id="loggedinas"> Logged in as: <%= Current.user.username %></p>
+        <% end %>
     </header>
     <div id="leftsidebar">
 
@@ -41,7 +44,7 @@
 
     <% else %>
 
-    <p>Logged in as <%= Current.user.username %></p>
+    
     <%= button_to "Logout", session_path, id: "loginbtn", method: :delete%>
 
     <% end %>
