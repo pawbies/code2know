@@ -1,4 +1,18 @@
 /* For index.html.erb */
+#quest-h1{
+    position: relative;
+    /* margin: 100px 0 0 230px; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#startcontent{
+    position: relative;
+    margin: 80px 0 0 210px;
+    width: calc(100%-200px);
+    height: calc(100%-60px);
+    /* background-color: grey !important; */
+}
+/* For application.html.erb */
 body{
     background-color: #17181A;
     color: white;

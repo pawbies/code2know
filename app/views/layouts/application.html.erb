@@ -8,12 +8,28 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "questionsmain", "data-turbo-track": "reload" %>
+
 
 
   </head>
 
   <body>
-  
+
+    <header>
+        <h1 id="title">Code2Know</h1>
+    </header>
+    <div id="leftsidebar">
+
+    <div id="buttons">
+    <button id="askbtn">+ ASK A QUESTION</button>
+    <button class="sidebtn">Home</button>
+    <button class="sidebtn">Find questions</button>
+    <button class="sidebtn">Categories</button>
+    <button class="sidebtn">Users</button>
+    </div>
+
+    </div> 
   <%= yield %>
 
   </body>
