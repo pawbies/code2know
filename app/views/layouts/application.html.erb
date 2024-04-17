@@ -27,9 +27,23 @@
     <button class="sidebtn">Find questions</button>
     <button class="sidebtn">Categories</button>
     <button class="sidebtn">Users</button>
+
+    <!--<%= button_to "Weiter", new_user_path, method: :get %>
+    <%= link_to "Weiter", new_user_path %>-->
+
     </div>
     <div id="loginsidebar">
-    <button id="loginbtn">Login / Signup</button>
+    <!--<button id="loginbtn">Login / Signup</button>-->
+
+    <% if Current.user.nil? %>
+
+    <%= button_to "Login", new_session_path, id: "loginbtn", method: :get%>
+
+    <% else %>
+    
+    <%= button_to "Logout", session_path, id: "loginbtn", method: :delete%>
+
+    <% end %>
     </div>
 
     </div> 
