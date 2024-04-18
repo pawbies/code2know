@@ -1,24 +1,21 @@
 <%= stylesheet_link_tag "questions_index.css", "data-turbo-track": "reload" %>
 <div id="content">
 <h1 id="quest-h1">Recent Questions</h1>
+<div id="questionscontent">
     <div class="start-question">
-        <span>Schnurliver</span>
-        <h2>How to center a div?</h2>
-        <p>How to center my div?</p>
-        <p>Thanks for every answer :)</p>
-        <div class="codeblock">
-        <pre>
-div
-{
-    position: relative;
-    top: 50%;
-    left: 50%;
-}
-        </pre>
-        </div>
-        <div class="codeblock-copy">
-            <span>Copy Code</span>
-        </div>
+        <span class="qu-username">Schnurliver</span>
+        <span class="qu-time">1 day ago</span>
+        <h2 class="qu-title">How to center a div?</h2>
+        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
+        <%= link_to "⇱ View 7 Answers", new_user_path, class: "qu-answers" %>
+    </div>
+        <div class="start-question">
+        <span class="qu-username">Ju</span>
+        <span class="qu-time">7 days ago</span>
+        <h2 class="qu-title">Hääää?</h2>
+        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
+        <%= link_to "⇱ View 3 Answers", new_user_path, class: "qu-answers" %>
+    </div>
     </div>
 
 <% @questions.each do |question| %>
