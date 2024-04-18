@@ -1,62 +1,18 @@
-<%= stylesheet_link_tag "questions_index.css", "data-turbo-track": "reload" %>
-<div id="content">
 <h1 id="quest-h1">Recent Questions</h1>
 <div id="questionscontent">
-    <div class="start-question">
-        <span class="qu-username">Schnurliver</span>
-        <span class="qu-time">1 day ago</span>
-        <h2 class="qu-title">How to center a div?</h2>
-        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
-        <%= link_to "⇱ View 7 Answers", new_user_path, class: "qu-answers" %>
-    </div>
-        <div class="start-question">
-        <span class="qu-username">Ju</span>
-        <span class="qu-time">7 days ago</span>
-        <h2 class="qu-title">Hääää?</h2>
-        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
-        <%= link_to "⇱ View 3 Answers", new_user_path, class: "qu-answers" %>
-    </div>
-            <div class="start-question">
-        <span class="qu-username">Willi</span>
-        <span class="qu-time">9 days ago</span>
-        <h2 class="qu-title">Bootstrap</h2>
-        <!--<p class="qu-answers">⇱ 1 Answer</p>-->
-        <%= link_to "⇱ View 10 Answers", new_user_path, class: "qu-answers" %>
-    </div>
-            <div class="start-question">
-        <span class="qu-username">Makzim</span>
-        <span class="qu-time">2 weeks ago</span>
-        <h2 class="qu-title">Arduino?</h2>
-        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
-        <%= link_to "⇱ View 2 Answers", new_user_path, class: "qu-answers" %>
-    </div>
-                <div class="start-question">
-        <span class="qu-username">Laurenz</span>
-        <span class="qu-time">2 weeks ago</span>
-        <h2 class="qu-title">What does 'ALTER' in SQL?</h2>
-        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
-        <%= link_to "⇱ View 23 Answers", new_user_path, class: "qu-answers" %>
-    </div>
-                <div class="start-question">
-        <span class="qu-username">Frido</span>
-        <span class="qu-time">3 weeks ago</span>
-        <h2 class="qu-title">How to CSS?</h2>
-        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
-        <%= link_to "⇱ View 249 Answers", new_user_path, class: "qu-answers" %>
-    </div>
-                    <div class="start-question">
-        <span class="qu-username">Greeny</span>
-        <span class="qu-time">4 weeks ago</span>
-        <h2 class="qu-title">How to fix 'server already running' in ruby rails?</h2>
-        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
-        <%= link_to "⇱ View 21 Answers", new_user_path, class: "qu-answers" %>
-    </div>
-    </div>
+
+    
 
 <% @questions.each do |question| %>
 
-<p><%= question.heading %></p>
+<div class="start-question">
+        <span class="qu-username"><%= question.user.username %></span>
+        <span class="qu-time">4 weeks ago</span>
+        <h2 class="qu-title"><%= question.heading %></h2>
+        <!--<p class="qu-answers">⇱ 7 Answers</p>-->
+        <%= link_to "⇱ View 21 Answers", question_path(id: question.id), class: "qu-answers" %>
+    </div>
 
 <% end %>
-
 </div>
+

@@ -1,8 +1,6 @@
 .start-question{
     position: relative;
     width: 300px;
-    max-width: 300px;
-    min-width: 230px;
     height: auto;
     background-color: #1D2022;
     padding: 15px 20px 10px 20px;
@@ -66,7 +64,7 @@
 
     position: relative;
     margin: 80px 0 0 0px;
-    width: 100%;
+    width: calc(100%-300px);
     height: calc(100%-200px);
     transition: all 0.5s;
     /* background-color: aquamarine; */
@@ -74,9 +72,8 @@
     /* background-color: grey !important; */
 }
 #questionscontent{
-    display: flex-box;
+    display: flex;
     flex-wrap: wrap;
-    
     justify-content: center;
     /* background-color: teal; */
 }
@@ -246,6 +243,8 @@ header{
         display: flex;
         flex-wrap: wrap;
         justify-content: left;
+        width: 100%;
+        /* background-color:brown !important; */
         /* background-color: teal; */
     }
     #loggedinas{
