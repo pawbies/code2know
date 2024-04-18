@@ -1,6 +1,6 @@
 .start-question{
     position: relative;
-    width: 25%;
+    width: 300px;
     max-width: 300px;
     min-width: 230px;
     height: auto;
@@ -8,7 +8,7 @@
     padding: 15px 20px 10px 20px;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 20px;
+    margin: 15px;
 }
 .qu-username{
     opacity: 0.5;
@@ -49,11 +49,13 @@
 /* For every Site */
 #quest-h1{
     position: relative;
+    font-size: 2rem;
     /* margin: 100px 0 0 230px; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 #loggedinas{
+    display: none;
     position: absolute;
     top: 5px;
     right: 30px;
@@ -64,16 +66,18 @@
 
     position: relative;
     margin: 80px 0 0 0px;
-    width: calc(100%);
-    height: calc(100%-60px);
+    width: 100%;
+    height: calc(100%-200px);
     transition: all 0.5s;
+    /* background-color: aquamarine; */
     
     /* background-color: grey !important; */
 }
 #questionscontent{
-    display: flex;
+    display: flex-box;
     flex-wrap: wrap;
-    align-items: flex-start;
+    
+    justify-content: center;
     /* background-color: teal; */
 }
 form.button_to{
@@ -241,8 +245,16 @@ header{
     #questionscontent{
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        justify-content: left;
         /* background-color: teal; */
+    }
+    #loggedinas{
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: #415368;
     }
 
     

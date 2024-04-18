@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "questions_index.css", "data-turbo-track": "reload" %>
+<div id="content">
 <h1>Create new Question</h1>
 
 <%= form_with model: @question, url: questions_path do |form| %>
@@ -17,5 +19,5 @@
 </div>
 
 <% end %>
-
+</div>
 
