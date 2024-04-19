@@ -1,21 +1,24 @@
-<h1>Sign in</h1>
+<div class="form">
+<div class="form-content">
+<h1>Login</h1>
 
 <%= form_with url: sessions_path do |form| %>
 
 <div>
-  <%= form.label :email %>
+<span>E-mail adress</span><br>
   <%= form.text_field :email, required: true %>
 </div>
 
 <div>
-  <%= form.label :password %>
-  <%= form.text_field :password, required: true %>
+<span>Password</span><br>
+  <%= form.text_field :password, required: true%>
 </div>
 
 
 <div>
   <%= form.submit "Sign in" %>
+  <%= button_to "Or Sign Up", users_path, class: "sidebtn", method: :get %>
 </div>
-
-
+</div>
+</div>
 <% end %>

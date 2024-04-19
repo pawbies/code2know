@@ -1,3 +1,23 @@
+.form{
+    width: auto;
+    height: fit-content;
+    /* background-color: grey !important; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+
+}
+.form-content{
+    background-color: #1D2022;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    border: thin solid #1267A6;
+}
+
+
 .start-question{
     position: relative;
     width: 300px;
