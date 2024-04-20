@@ -7,7 +7,7 @@
 
 <div class="start-question">
         <span class="qu-username"><%= question.user.username %></span>
-        <span class="qu-time">4 weeks ago</span>
+        <span class="qu-time"><%= question_date question %></span>
         <h2 class="qu-title"><%= question.heading %></h2>
         <!--<p class="qu-answers">⇱ 7 Answers</p>-->
         <%= link_to "⇱ View 21 Answers", question_path(id: question.id), class: "qu-answers" %>

@@ -66,9 +66,11 @@ class QuestionsController < ApplicationController
     redirect_to questions_path, notice: "Deleted Question"
   end
 
+  
   private
 
   def question_params
     params.require("question").permit(:heading, :text)
   end
+
 end
