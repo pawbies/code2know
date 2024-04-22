@@ -11,7 +11,6 @@
     margin: 5px;
     background-color: #1D2022;
     color: white;
-    border-bottom: 2px solid #00487D;
     
 }
 .forminput:focus{
@@ -23,10 +22,8 @@
     /* margin: 30px; */
     padding: 20px 20px 50px 20px;
     border-radius: 8px;
-    width: 400px;
-    max-width: 500px;
+    width: 95%;
     /* border: thin solid #1267A6; */
-    max-width: 800px;
     text-align: center;
 }
 .formbtn{
@@ -329,7 +326,16 @@ header{
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color: #415368;
     }
-
+    .form-content{
+        background-color: #1D2022;
+        /* margin: 30px; */
+        padding: 20px 20px 50px 20px;
+        border-radius: 8px;
+        width: 350px;
+        max-width: 800px;
+        text-align: center;
+        margin-top: 50px;
+    }
 
 
     
