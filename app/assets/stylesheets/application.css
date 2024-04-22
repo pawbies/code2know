@@ -1,7 +1,8 @@
 .form{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
-    display: grid;
-    justify-content: center;
+    width: 100%;
+    transition: all 0.5s;
+    padding: 20px 0px 30px 0px;
 }
 .forminput{
     width: 60%;
@@ -11,7 +12,6 @@
     margin: 5px;
     background-color: #1D2022;
     color: white;
-    border-bottom: 2px solid #00487D;
     
 }
 .forminput:focus{
@@ -21,15 +21,14 @@
 .form-content{
     background-color: #1D2022;
     /* margin: 30px; */
-    padding: 20px 20px 50px 20px;
-    border-radius: 8px;
-    width: 400px;
-    max-width: 500px;
+    padding: 20px 0px 50px 0px;
+    border-radius: 13px;
+    width: 100%;
     /* border: thin solid #1267A6; */
-    max-width: 800px;
     text-align: center;
+    margin-top: 50px;
 }
-.formbtn{
+#formbtn{
     width: 60%;
     padding: 10px 37px 10px 37px;
 
@@ -45,7 +44,7 @@
 
 
 }
-.formbtn:hover{
+#formbtn:hover{
     background-color: #23272A;
     cursor: pointer;
 }
@@ -80,6 +79,11 @@
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 15px;
+    transition: all 0.2s;
+}
+.start-question:hover{
+    background-color: #23272A;
+    cursor: pointer;
 }
 .qu-username{
     opacity: 0.5;
@@ -118,7 +122,7 @@
 }
 
 /* For every Site */
-#quest-h1{
+.quest-h1{
     position: relative;
     font-size: 2rem;
     /* margin: 100px 0 0 230px; */
@@ -150,11 +154,10 @@
     justify-content: center;
     /* background-color: teal; */
 }
-form.button_to{
-    /* background-color: blue; */
+/* form.button_to{
     width: 200px;
     height: 50px;
-}
+} */
 /* For application.html.erb */
 body{
     background-color: #17181A;
@@ -169,15 +172,15 @@ header{
     position: fixed;
     height: 60px;
     display: inline;
-    border-bottom: 3px solid #353B40;
+    border-bottom: 2px solid #353B40;
     top: 0;
     left: 0;
     z-index: 2;
 }
-#title{
-    font-size: 1.5rem;
+.title{
+    font-size: 30px;
     font-family: Inter;
-    padding-left: 35px;
+    padding-left: 25px;
 }
 #leftsidebar{
     background-color: #1D2022;
@@ -211,9 +214,9 @@ header{
     margin-bottom: 100px;
 }
 .sidebtn{
-    width: 190px;
+    width: 170px;
     padding: 10px 37px 10px 37px;
-    margin-left: 5px;
+    margin: 14px 0 14px 15px;
     background-color: #23272A;
     color: white;
     font-size: 12px;
@@ -233,7 +236,7 @@ header{
 
 #askbtn{
     width: 190px;
-    padding: 10px 37px 10px 37px;
+    padding: 10px 17px 10px 17px;
     margin-left: 5px;
     background-color: #00487D;
     color: white;
@@ -329,7 +332,21 @@ header{
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color: #415368;
     }
-
+    .form-content{
+        background-color: #1D2022;
+        /* margin: 30px; */
+        padding: 20px 20px 50px 20px;
+        border-radius: 8px;
+        width: 350px;
+        max-width: 800px;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .form{
+        display: grid;
+        justify-content: center;
+        padding: 20px 0px 30px 0px;
+    }
 
 
     
