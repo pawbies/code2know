@@ -3,4 +3,6 @@ class Answer < ApplicationRecord
   belongs_to :question, optional: true
   belongs_to :answer, optional: true
 
+  has_many :answers
   
+end  
