@@ -16,6 +16,48 @@
     border-radius: 8px;
     border: thin solid #1267A6;
 }
+.formbtn{
+    width: 190px;
+    padding: 10px 37px 10px 37px;
+
+    margin: 10px;
+    background-color: #23272A;
+    color: white;
+    font-size: 12px;
+    border: thin solid transparent;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.5s;
+    display: none;
+    height: 40px;
+
+
+}
+.formbtn:hover{
+    background-color: #33393D;
+    cursor: pointer;
+}
+
+#formsignin{
+    width: 190px;
+    padding: 10px 37px 10px 37px;
+    margin: 10px;
+    background-color: #23272A;
+    color: white;
+    font-size: 12px;
+    border: thin solid transparent;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.5s;
+    display: none;
+    height: 40px;
+
+
+}
+#formsignin:hover{
+    background-color: #33393D;
+    cursor: pointer;
+}
 
 
 .start-question{
@@ -274,6 +316,12 @@ header{
         right: 30px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color: #415368;
+    }
+    #formsignin{
+        display: block;
+    }
+    .formbtn{
+        display: block;
     }
 
     
