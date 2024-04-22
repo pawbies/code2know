@@ -1,0 +1,34 @@
+<h1>Answer from <%= @answer.user.username %></h1>
+
+<p><%= @answer.text %></p>
+
+
+
+<% @answer.answers.each do |ans| %>
+
+<p><%= ans.text %></p> <%= link_to "Go to answer", answer_path(id: ans.id) %>
+<small>By <%= ans.user.username %></small>
+
+<hr>
+
+<% end %>
+
+
+
+<h2>Add an Answer</h2>
+
+<%= form_with model: @answer_new, url: answers_path do |form| %>
+
+<div>
+  <%= form.label :text %>
+  <%= form.text_field :text, required: true %>
+</div>
+
+<div>
+  <%= form.submit "Create Answer" %>
+</div>
+
+<input type="text" name="type" value="answer" hidden>
+<input type="number" name="id" value="<%= @answer.id %>" hidden>
+
+<% end %>
