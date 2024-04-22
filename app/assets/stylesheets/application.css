@@ -149,6 +149,7 @@ body{
     background-color: #17181A;
     color: white;
     overflow-x: hidden;
+    
 }
 
 header{
@@ -164,7 +165,7 @@ header{
 }
 #title{
     font-size: 1.5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+    font-family: Inter;
     padding-left: 35px;
 }
 #leftsidebar{
