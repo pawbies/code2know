@@ -1,7 +1,7 @@
 .form{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
-    display: grid;
-    justify-content: center;
+    width: 100%;
+    transition: all 0.5s;
 }
 .forminput{
     width: 60%;
@@ -20,9 +20,9 @@
 .form-content{
     background-color: #1D2022;
     /* margin: 30px; */
-    padding: 20px 20px 50px 20px;
+    padding: 20px 0px 50px 0px;
     border-radius: 8px;
-    width: 95%;
+    width: 100%;
     /* border: thin solid #1267A6; */
     text-align: center;
 }
@@ -77,6 +77,11 @@
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 15px;
+    transition: all 0.2s;
+}
+.start-question:hover{
+    background-color: #23272A;
+    cursor: pointer;
 }
 .qu-username{
     opacity: 0.5;
@@ -335,6 +340,11 @@ header{
         max-width: 800px;
         text-align: center;
         margin-top: 50px;
+    }
+    .form{
+        display: grid;
+        justify-content: center;
+        padding: 20px 0px 50px 0px;
     }
 
 
