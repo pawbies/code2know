@@ -6,3 +6,32 @@
 </div>
 
 <small>By <%= link_to @question.user.username, user_path(id: @question.user.id) %></small>
+
+<h2>Answers</h2>
+
+<% @question.answers.each do |answer| %>
+
+<p><%= answer.text %></p> <%= link_to "Go to answer", answer_path(id: answer.id) %>
+<small>By <%= answer.user.username %></small>
+
+<hr>
+
+<% end %>
+
+<h2>Add an Answer</h2>
+
+<%= form_with model: @answer, url: answers_path do |form| %>
+
+<div>
+  <%= form.label :text %>
+  <%= form.text_field :text, required: true %>
+</div>
+
+<div>
+  <%= form.submit "Create Answer" %>
+</div>
+
+<input type="text" name="type" value="question" hidden>
+<input type="number" name="id" value="<%= @question.id %>" hidden>
+
+<% end %>
