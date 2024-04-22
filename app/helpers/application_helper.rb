@@ -30,4 +30,14 @@ module ApplicationHelper
     return "#{seconds_elapsed} seconds ago"
     
   end
+
+  def question_answers question
+    if question.answers.count == 1
+      return "⇱ View 1 Answer"
+    elsif question.answers.count > 1
+      return "⇱ View #{ question.answers.count } Answers"
+    else
+      return "⇱ View Question"
+    end
+  end
 end
