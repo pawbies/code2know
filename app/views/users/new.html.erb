@@ -1,30 +1,29 @@
-
+<div class="form">
+<div class="form-content">
 <h1>Create a new User</h1>
 
 <%= form_with model: @user, url: users_path do |form| %>
 
 <div>
-  <%= form.label :username %>
-  <%= form.text_field :username, required: true %>
+  <%= form.text_field :username, placeholder: "Username", class: "forminput",  required: true %>
 </div>
 
 <div>
-  <%= form.label :email %>
-  <%= form.text_field :email, required: true %>
+  <%= form.text_field :email, placeholder: "E-Mail Adress", class: "forminput",  required: true %>
 </div>
 
 <div>
-  <%= form.label :password %>
-  <%= form.text_field :password, required: true %>
+  <%= form.text_field :password, placeholder: "Password", class: "forminput",  required: true %>
 </div>
 
 <div>
-  <%= form.label :password_confirmation %>
-  <%= form.text_field :password_confirmation, required: true %>
+  <%= form.text_field :password_confirmation, placeholder: "Repeat password", class: "forminput",  required: true %>
 </div>
 
 <div>
-  <%= form.submit "Create new User" %>
+  <%= form.submit "Create new User", id: "formsignin" %>
 </div>
 
 <% end %>
+</div>
+</div>
