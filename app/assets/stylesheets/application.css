@@ -1,61 +1,72 @@
 .form{
-    width: auto;
-    height: fit-content;
-    /* background-color: grey !important; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
     display: grid;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
-
+}
+.forminput{
+    width: 60%;
+    border: thin solid transparent;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #1D2022;
+    color: white;
+    border-bottom: 2px solid #00487D;
+    
+}
+.forminput:focus{
+    outline: none;
+    background-color: #33393D;
 }
 .form-content{
     background-color: #1D2022;
-    margin: 30px;
-    padding: 20px;
+    /* margin: 30px; */
+    padding: 20px 20px 50px 20px;
     border-radius: 8px;
-    border: thin solid #1267A6;
+    width: 400px;
+    max-width: 500px;
+    /* border: thin solid #1267A6; */
+    max-width: 800px;
+    text-align: center;
 }
 .formbtn{
-    width: 190px;
+    width: 60%;
     padding: 10px 37px 10px 37px;
 
     margin: 10px;
-    background-color: #23272A;
+    background-color: #111316;
     color: white;
     font-size: 12px;
     border: thin solid transparent;
     border-radius: 8px;
     position: relative;
     transition: all 0.5s;
-    display: none;
     height: 40px;
 
 
 }
 .formbtn:hover{
-    background-color: #33393D;
+    background-color: #23272A;
     cursor: pointer;
 }
 
 #formsignin{
-    width: 190px;
+    width: 60%;
     padding: 10px 37px 10px 37px;
     margin: 10px;
-    background-color: #23272A;
+    background-color: #00487D;
     color: white;
     font-size: 12px;
     border: thin solid transparent;
     border-radius: 8px;
     position: relative;
     transition: all 0.5s;
-    display: none;
     height: 40px;
 
 
 }
 #formsignin:hover{
-    background-color: #33393D;
+    background-color: #1267A6;
     cursor: pointer;
 }
 
@@ -318,12 +329,8 @@ header{
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color: #415368;
     }
-    #formsignin{
-        display: block;
-    }
-    .formbtn{
-        display: block;
-    }
+
+
 
     
 }

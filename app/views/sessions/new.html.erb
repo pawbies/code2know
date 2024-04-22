@@ -5,18 +5,16 @@
 <%= form_with url: sessions_path do |form| %>
 
 <div>
-<span>E-mail adress</span><br>
-  <%= form.text_field :email, required: true %>
+  <%= form.text_field :email, class: "forminput", placeholder: "E-Mail Adress", required: true %>
 </div>
 
 <div>
-<span>Password</span><br>
-  <%= form.text_field :password, required: true%>
+  <%= form.text_field :password, class: "forminput", placeholder: "Password", required: true%>
 </div>
 
 
 <div>
-  <%= form.submit "Sign in", id: "formsignin" %>
+  <%= form.submit "Sign in", id: "formsignin" %><br>
   <%= button_to "Or Sign Up", users_path, class: "formbtn", method: :get %>
 </div>
 </div>
