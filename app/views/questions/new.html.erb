@@ -1,20 +1,19 @@
-<h1>Create new Question</h1>
-
+<h1 class="quest-h1">Create new Question</h1>
+<div class="form-content">
 <%= form_with model: @question, url: questions_path do |form| %>
 
 <div>
-  <%= form.label :heading %>
-  <%= form.text_field :heading, required: true %>
+  <%= form.text_field :heading, required: true, placeholder: "Title of your question:", class: "forminput" %>
 </div>
 
 <div>
-  <%= form.label :text %>
-  <%= form.text_area :text, required: true %>
+  <%= form.text_area :text, required: true, placeholder: "Form your question...", class: "forminput" %>
 </div>
 
 <div>
-  <%= form.submit "Create new Question" %>
+  <%= form.submit "Create new Question", class: "formbtn" %>
 </div>
 
 <% end %>
+</div>
 

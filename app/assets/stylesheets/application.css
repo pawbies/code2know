@@ -60,7 +60,7 @@
     text-align: center;
     margin-top: 50px;
 }
-#formbtn{
+.formbtn{
     width: 60%;
     padding: 10px 37px 10px 37px;
 
@@ -76,7 +76,7 @@
 
 
 }
-#formbtn:hover{
+.formbtn:hover{
     background-color: #23272A;
     cursor: pointer;
 }
