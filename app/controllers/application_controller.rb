@@ -21,10 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_some_user
-
-    if Current.user.nil?
-      redirect_to new_session_path, notice: "Need to be logged in for that"
-    end
-    
+    redirect_to new_session_path, notice: "Need to be logged in for that" if Current.user.nil?
   end
 end

@@ -22,6 +22,15 @@
         <% if !Current.user.nil? %>
         <p id="loggedinas"> Logged in as: <%= Current.user.username %></p>
         <% end %>
+
+	<% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+        <% end %>
+
+	<% if flash[:alert] %>
+        <p><%= flash[:alert] %></p>
+        <% end %>
+	
     </header>
     <div id="leftsidebar">
     <div id="mainbutton">

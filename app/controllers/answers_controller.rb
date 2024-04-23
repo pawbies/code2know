@@ -1,6 +1,10 @@
 class AnswersController < ApplicationController
 
+
+  before_action :require_some_user
+  
   def create
+    
     @answer = Answer.new(answer_params)
     @answer.user = Current.user
 
@@ -13,7 +17,13 @@ class AnswersController < ApplicationController
     end
 
     if @answer.save
-      redirect_to root_path
+      if params[:type] == "question"
+        redirect_to question_path(id: @answer.question.id), notice: "Created answer"
+      elsif params[:type] == "answer"
+        redirect_to answer_path(id: @answer.answer.id), notice: "Created answer"
+      else
+        redirect_to root_path, notice: "Something went wrong"
+      end
     else
       redirect_to users_path
     end

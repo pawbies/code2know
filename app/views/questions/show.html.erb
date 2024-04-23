@@ -20,6 +20,8 @@
 
 <% end %>
 
+<% if Current.user %>
+
 <h2>Add an Answer</h2>
 
 <%= form_with model: @answer, url: answers_path do |form| %>
@@ -35,5 +37,11 @@
 
 <input type="text" name="type" value="question" hidden>
 <input type="number" name="id" value="<%= @question.id %>" hidden>
+
+<% end %>
+
+<% else %>
+
+  <%= link_to "Sign in to answer", new_session_path %>
 
 <% end %>
