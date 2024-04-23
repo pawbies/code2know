@@ -1,3 +1,35 @@
+.userlink{
+    text-decoration: none;
+    color: white;
+}
+.userlink:hover{
+    color: #1267A6;
+}
+.editlink{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.444);
+}
+.editlink:hover{
+    color: #1267A6;
+}
+.usersoverview{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.users{
+    background-color: #23272A;
+    width: 300px;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 9px;
+    height: auto;
+}
+
+
+
 .form{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
     width: 100%;
@@ -178,9 +210,9 @@ header{
     z-index: 2;
 }
 .title{
-    font-size: 30px;
+    font-size: 20px;
     font-family: Inter;
-    padding-left: 25px;
+    padding: 7px 0px 0px 30px;
 }
 #leftsidebar{
     background-color: #1D2022;
@@ -266,6 +298,13 @@ header{
     z-index: 1;
 
 }
+/* #absolutelogin{
+    position: absolute;
+    background-color: red;
+    width: auto;
+    height: auto;
+    margin-top: 100%;
+} */
 #loginbtn{
     background-color: #23272A;
     border: thin solid transparent;
@@ -275,9 +314,11 @@ header{
     border-radius: 5px;
     color: transparent;
     margin: 5px 0 0 5px;
-    position: fixed;
+    position: absolute;
     transition: all 0.5s;
-    display: none;
+    left: -200px;
+    width: 190px;
+    padding: 10px 37px 10px 37px;
 
 
 }
@@ -305,7 +346,7 @@ header{
         width: 190px;
         padding: 10px 37px 10px 37px;
         color: white;
-        display:block;
+        left: 0;
         
     }
     #content{
@@ -319,7 +360,7 @@ header{
     #questionscontent{
         display: flex;
         flex-wrap: wrap;
-        justify-content: left;
+        justify-content: center;
         width: 100%;
         /* background-color:brown !important; */
         /* background-color: teal; */

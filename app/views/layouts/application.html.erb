@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Code2know</title>
+    <title>Code2Know</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="icon" type="x-icon" href="">
 
   </head>
 
@@ -38,7 +39,6 @@
 
     </div>
     <div id="loginsidebar">
-    <!--<button id="loginbtn">Login / Signup</button>-->
 
     <% if Current.user.nil? %>
     
@@ -50,10 +50,10 @@
     <%= button_to "Logout", session_path, id: "loginbtn", method: :delete%>
 
     <% end %>
+
     </div>
 
     </div> 
-
 <div id="content">
   <%= yield %>
 </div>

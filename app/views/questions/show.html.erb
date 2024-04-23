@@ -5,6 +5,8 @@
   <%= @question.text.nil? ? "Not available" : @question.text %>
 </div>
 
+<p>Created at <%= @question.created_at %></p>
+
 <small>By <%= link_to @question.user.username, user_path(id: @question.user.id) %></small>
 
 <h2>Answers</h2>
