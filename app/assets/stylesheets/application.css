@@ -1,3 +1,39 @@
+#notice{
+
+
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+#noticediv img{
+    height: 20px;
+    width: 20px;
+    transition: all 0.3s;
+
+}
+#noticediv img:hover{
+    cursor: pointer;
+    opacity: 0.4;
+}
+#imgdiv{
+    display: flex;
+    height: auto;
+    display: grid;
+    justify-content: left;
+}
+#noticediv{
+    width: auto;
+    height: auto;
+    background-color: #353B40;
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    z-index: 999;
+    display: flex;
+}
+
 .userlink{
     text-decoration: none;
     color: white;

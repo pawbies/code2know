@@ -24,7 +24,12 @@
         <% end %>
 
 	<% if flash[:notice] %>
-        <p><%= flash[:notice] %></p>
+  <div id="noticediv">
+  <div id="imgdiv">
+  <%= image_tag "closeicon.png", class: "info" %><span id="notice"><%= flash[:notice] %>
+
+  </div>
+        </div>
         <% end %>
 
 	<% if flash[:alert] %>
