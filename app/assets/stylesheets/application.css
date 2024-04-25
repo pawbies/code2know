@@ -9,21 +9,16 @@
     height: 20px;
     width: 20px;
     transition: all 0.3s;
+    display: flex;
+    flex-wrap: nowrap;
 
 }
 #noticediv img:hover{
     cursor: pointer;
     opacity: 0.4;
 }
-#imgdiv{
-    display: flex;
-    height: auto;
-    display: grid;
-    justify-content: left;
-    width: min-content;
-}
 #noticediv{
-    width: fit-content;
+    width: auto;
     height: auto;
     background-color: #353B40;
     padding: 10px 15px 10px 15px;
@@ -31,10 +26,9 @@
     position: fixed;
     bottom: 5%;
     right: 3%;
-    z-index: 999;
     display: flex;
-    justify-content: left;
-    align-items: center;
+    flex-wrap: nowrap;
+    z-index: 999;
     transition: all 0.4s ease;
 }
 
