@@ -1,16 +1,18 @@
 class CategoriesController < ApplicationController
 
-  before_action :require_admin
-
   def index
     @categories = Category.all
   end
 
   def new
+    return unless require_admin
+
     @category = Category.new
   end
 
   def create
+    return unless require_admin
+    
     @category = Category.new(category_params)
 
     if @category.save
@@ -20,7 +22,13 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def show
+    @category = Category.find_by(id: params[:id])
+  end
+
   def edit
+    return unless require_admin
+    
     @category = Category.find_by(id: params[:id])
 
     if not @category.present?
@@ -29,6 +37,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    return unless require_admin
+    
     @category = Category.find_by(id: params[:id])
 
     if not @category.present?
@@ -43,6 +53,8 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    return unless require_admin
+    
     category = Category.find_by(id: params[:id])
     if not category.present?
       redirect_to categories_path, notice: "categorie does not exit"

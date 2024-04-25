@@ -1,0 +1,13 @@
+<h1>Category: <%= @category.name %></h1>
+
+<h2>Questions with this category:</h2>
+
+<ul>
+
+  <% @category.questions.each do |question| %>
+  
+  <li><%= link_to question.heading, question_path(id: question.id) %></li>
+
+  <% end %>
+
+</ul>

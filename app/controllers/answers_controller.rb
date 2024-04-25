@@ -1,9 +1,10 @@
 class AnswersController < ApplicationController
 
-
-  before_action :require_some_user
-  
   def create
+
+    if !require_some_user
+      return;
+    end
     
     @answer = Answer.new(answer_params)
     @answer.user = Current.user

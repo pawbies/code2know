@@ -9,6 +9,18 @@
 
 <small>By <%= link_to @question.user.username, user_path(id: @question.user.id) %></small>
 
+<h2>Categories</h2>
+
+<ul>
+
+<% @question.categories.each do |category| %>
+
+<li><%= category.name %></li>
+
+<% end %>
+
+</ul>
+
 <h2>Answers</h2>
 
 <% @question.answers.each do |answer| %>
