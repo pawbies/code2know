@@ -9,10 +9,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-<link rel="icon" type="x-icon" href="">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="x-icon" href="">
   </head>
 
   <body>
@@ -26,7 +25,7 @@
 	<% if flash[:notice] %>
   <div id="noticediv">
   <div id="imgdiv">
-  <%= image_tag "closeicon.png", class: "info" %><span id="notice"><%= flash[:notice] %>
+  <%= image_tag "closeicon.png", class: "info", id: "in" %><span id="notice"><%= flash[:notice] %>
 
   </div>
         </div>
@@ -46,31 +45,27 @@
       <%= button_to "Find questions", root_path, class: "sidebtn", method: :get %>
       <%= button_to "Categories", categories_path, class: "sidebtn", method: :get %>
       <%= button_to "Users", users_path, class: "sidebtn", method: :get %>
-      
-
-    <!--<%= button_to "Weiter", new_user_path, method: :get %>
-    <%= link_to "Weiter", new_user_path %>-->
-
     </div>
     <div id="loginsidebar">
-
     <% if Current.user.nil? %>
-    
     <%= button_to "Login", new_session_path, id: "loginbtn", method: :get%>
-
     <% else %>
-
-    
     <%= button_to "Logout", session_path, id: "loginbtn", method: :delete%>
-
     <% end %>
-
     </div>
-
     </div> 
-<div id="content">
-  <%= yield %>
-</div>
-
+    <div id="content">
+      <%= yield %>
+    </div>
   </body>
+<script>
+  var msgs = document.getElementsByClassName("info");
+  for (var i = 0; i < msgs.length; i++) {
+    msgs[i].onclick = function(evt) {
+      var infopop = document.getElementById("noticediv");
+      infopop.style.right = "-900px";
+    };
+  }
+</script>
+
 </html>

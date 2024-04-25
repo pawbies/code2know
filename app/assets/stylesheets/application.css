@@ -20,18 +20,22 @@
     height: auto;
     display: grid;
     justify-content: left;
+    width: min-content;
 }
 #noticediv{
-    width: auto;
+    width: fit-content;
     height: auto;
     background-color: #353B40;
     padding: 10px 15px 10px 15px;
     border-radius: 8px;
     position: fixed;
-    bottom: 100px;
-    right: 100px;
+    bottom: 5%;
+    right: 3%;
     z-index: 999;
     display: flex;
+    justify-content: left;
+    align-items: center;
+    transition: all 0.4s ease;
 }
 
 .userlink{
