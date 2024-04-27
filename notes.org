@@ -4,4 +4,12 @@
 | 23-3 | 2h30m | Basic stuff for User Rank and Role   |
 | 24-3 | 2h00m | Log in and out and some minor things |
 | 30-3 | 1h00m | Question Model                       |
-|      |       |                                      |
+|  6-4 | 1h00m | Removing trix again                  |
+|  7-4 | 0h30m | Seeds                                |
+| 17-4 | 1h30m | Random Stuff                         |
+| 20-4 | 0h30m | Displaying Time                      |
+| 21-4 | 1h30m | Figuring docker out                  |
+| 22-4 | 3h00m | A Lot                                |
+| 23-4 | 0h30m | Flash                                |
+| 25-4 | 0h30m | Categories                           |
+| 27-4 | 2h00m | Validations                          |
