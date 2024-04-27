@@ -11,7 +11,10 @@ class User < ApplicationRecord
   after_initialize :default_values, unless: :persisted?
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :username, presence: true
+  validates :username, presence: true, length: { maximum: 20 }
+  validates :password, on: [:update, :create] ,length: { in: 8..150 }, if: :password_digest_changed?
+  validates :xp, numericality: { only_integer: true }
+  validates :xp, comparison: { less_than: 9223372036854775808 }
 
 
   before_save :level_up #, if: :xp_changed?

@@ -54,7 +54,7 @@ class UsersController < ApplicationController
       redirect_to users_path, notice: "Updated successfully"
     else
       puts @user.errors.full_messages
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
