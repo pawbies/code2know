@@ -1,6 +1,18 @@
 <h1 class="quest-h1">Create new Question</h1>
 <div class="form-content">
+  
 <%= form_with model: @question, url: questions_path do |form| %>
+
+<% if @question.errors.any? %>
+
+<div id="modelerrors">
+  <% @question.errors.full_messages.each do |msg| %>
+  
+  <div id="errormsg"><%= msg %></div>
+  <% end %>
+</div>
+
+<% end %>
 
 <div>
   <%= form.text_field :heading, required: true, placeholder: "Title of your question:", class: "forminput" %>

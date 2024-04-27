@@ -16,7 +16,7 @@ class RanksController < ApplicationController
     if @rank.save
       redirect_to ranks_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

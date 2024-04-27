@@ -7,6 +7,6 @@
 
 
 class Role < ApplicationRecord
-  validates :name, presence: true
-  validates :permission, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :permission, presence: true, uniqueness: true
 end

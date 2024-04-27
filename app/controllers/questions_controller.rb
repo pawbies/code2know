@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
       redirect_to questions_path, notice: 'Successfully created Question'
     else
       flash.now[:alert] = 'Something is wrong'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

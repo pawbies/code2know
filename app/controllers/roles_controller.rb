@@ -16,7 +16,7 @@ class RolesController < ApplicationController
     if @role.save
       redirect_to roles_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

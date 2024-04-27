@@ -2,6 +2,17 @@
 
 <%= form_with model: @rank, url: ranks_path do |form| %>
 
+<% if @rank.errors.any? %>
+
+<div id="modelerrors">
+  <% @rank.errors.full_messages.each do |msg| %>
+  
+  <div id="errormsg"><%= msg %></div>
+  <% end %>
+</div>
+
+<% end %>
+
 <div>
   <%= form.label :name %>
   <%= form.text_field :name, required: true %>

@@ -16,8 +16,7 @@ class UsersController < ApplicationController
       redirect_to users_path, notice: "Successfully created User"
       session[:user_id] = @user.id
     else
-      flash.now[:alert] = "Something is wrong"
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
