@@ -43,12 +43,13 @@
   <%= form.text_field :text, required: true %>
 </div>
 
+<%= hidden_field_tag 'source', 'question' %>
+<%= hidden_field_tag 'id', @question.id %>
+
 <div>
   <%= form.submit "Create Answer" %>
 </div>
 
-<input type="text" name="type" value="question" hidden>
-<input type="number" name="id" value="<%= @question.id %>" hidden>
 
 <% end %>
 

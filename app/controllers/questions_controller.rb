@@ -15,6 +15,7 @@ class QuestionsController < ApplicationController
     @question.user = Current.user
 
     if @question.save
+      Current.user.update(xp: Current.user.xp + 50)
       redirect_to questions_path, notice: 'Successfully created Question'
     else
       flash.now[:alert] = 'Something is wrong'

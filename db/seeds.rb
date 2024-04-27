@@ -28,9 +28,17 @@ end
 #---- Ranks ----
 
 ranks = [
-  { name: 'Noob', level: 1, threshold: 10 },
-  { name: 'Beginner', level: 2, threshold: 100 },
-  { name: 'Advanced', level: 3, threshold: 500 },
+  { name: "Novice", threshold: 10, level: 1 },
+  { name: "Apprentice", threshold: 100, level: 2 },
+  { name: "Journeyman", threshold: 500, level: 3 },
+  { name: "Adept", threshold: 1000, level: 4 },
+  { name: "Expert", threshold: 2000, level: 5 },
+  { name: "Master", threshold: 4000, level: 6 },
+  { name: "Grandmaster", threshold: 6000, level: 7 },
+  { name: "Legendary", threshold: 8000, level: 8 },
+  { name: "Mythical", threshold: 9000, level: 9 },
+  { name: "Godlike", threshold: 10000, level: 10 },
+  { name: "Transcendent", threshold: -1, level: 11 }
 ]
 
 ranks.each do |rank|
@@ -44,7 +52,7 @@ end
 #---- Users ----
 
 users = [
-  { email: 'Gay', username: 'Gay', password: 'Gay', password_confirmation: 'Gay', rank: Rank.find_by(name: "Advanced"), xp: 999, role: Role.find_by(name: "Counsel Member") },
+  { email: 'Gay@Gay', username: 'Gay', password: 'Gay', password_confirmation: 'Gay', rank: Rank.find_by(level: 11), xp: 1000, role: Role.find_by(name: "Counsel Member") },
 ]
 
 users.each do |user|

@@ -50,8 +50,12 @@ class UsersController < ApplicationController
       redirect_to users_path, notice: "User does not exist"
     end
 
-    @user.update(user_params)
-    redirect_to users_path, notice: "Updated successfully"
+    if @user.update(user_params)
+      redirect_to users_path, notice: "Updated successfully"
+    else
+      puts @user.errors.full_messages
+      render :edit
+    end
   end
 
   def destroy
