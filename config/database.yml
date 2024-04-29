@@ -22,4 +22,9 @@ test:
 
 production:
   <<: *default
-  database: storage/production.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  database: code2know
+  username: <%= ENV['C2K_DATABASE_USER'] %>
+  password: <%= ENV['C2K_DATABASE_PASSWORD'] %>
+  host: database_production
