@@ -11,6 +11,7 @@
     transition: all 0.3s;
     display: flex;
     flex-wrap: nowrap;
+    margin-right: 10px;
 
 }
 #noticediv img:hover{
@@ -30,6 +31,7 @@
     flex-wrap: nowrap;
     z-index: 999;
     transition: all 0.4s ease;
+    opacity: 1;
 }
 
 .userlink{
@@ -424,6 +426,26 @@ header{
     }
 
 
+
     
 }
-
+@media (max-width: 600px){
+    #burger{
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        background-color: blue;
+        width: 40px;
+        height: 40px;
+        z-index: 99;
+        justify-content: center;
+        
+    }
+    .burgeritem{
+        width: 40px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0 6px 0;
+        border-radius: 2px;
+    }
+}

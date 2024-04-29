@@ -52,6 +52,12 @@
     <% end %>
     </div>
     </div> 
+    <div id="burger" onclick="Burger()">
+      <div class="burgeritem" onclick="Burger()"></div>
+      <div class="burgeritem" onclick="Burger()"></div>
+      <div class="burgeritem" onclick="Burger()"></div>
+    </div>
+
     <div id="content">
       <%= yield %>
     </div>
@@ -62,8 +68,28 @@
     msgs[i].onclick = function(evt) {
       var infopop = document.getElementById("noticediv");
       infopop.style.right = "-900px";
+      infopop.style.opacity = 0;
     };
   }
+
+
+let burgerstate = 0; // Startzustand auf 0 setzen
+
+function Burger(){
+    var burger = document.getElementById("burger");
+    if (burger.style.backgroundColor === "grey") { // Prüfen, ob der Hintergrund grau ist
+        burger.style.backgroundColor = "blue"; // Ändern Sie die Farbe auf Blau
+        burgerstate = 1; // Zustand auf 1 setzen
+    } else { // Wenn der Hintergrund nicht grau ist
+        burger.style.backgroundColor = "grey"; // Ändern Sie die Farbe auf Grau
+        burgerstate = 0; // Zustand auf 0 setzen
+    }
+}
+
+
+
+
+
 </script>
 
 </html>

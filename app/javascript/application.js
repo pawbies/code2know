@@ -2,3 +2,12 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+// window.addEventListener('load', () => {
+//     setTimeout(() => {
+//         const loader = document.querySelector('.loader');
+//         const blackbox = document.getElementById('loginsidebar');
+//         loader.style.display = 'none';
+//         blackbox.style.display = 'none';
+//     }, 1); 
+// });
+
