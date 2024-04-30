@@ -1,0 +1,27 @@
+services:
+  app:
+    build: .
+    restart: always
+    environment:
+      - C2K_DATABASE_USER=root
+      - C2K_DATABASE_PASSWORD=secret
+    ports:
+      - 127.0.0.1:80:3000
+      - 127.0.0.1:443:3000
+
+  database_production:
+    image: 'postgres:latest'
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    image: 'dpage/pgadmin4:latest'
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - 5445:80
