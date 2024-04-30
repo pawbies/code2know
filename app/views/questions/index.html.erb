@@ -12,6 +12,9 @@
         <!--<p class="qu-answers">⇱ 7 Answers</p>-->
         <%= link_to question_answers(question), question_path(id: question.id), class: "qu-answers" %>
     </div>
+    <div id="r-questionbtn">
+    <%= button_to "+ ASK A QUESTION", new_question_path, id: "r-askbtn", method: :get %>
+    </div>
 
 <% end %>
 </div>

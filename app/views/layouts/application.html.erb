@@ -23,7 +23,7 @@
         <% end %>
 
 	<% if flash[:notice] %>
-  <div id="noticediv">
+  <div id="noticediv" onclick="Infoclose()">
   <%= image_tag "closeicon.png", class: "info", id: "in" %><span id="notice"><%= flash[:notice] %>
         </div>
         <% end %>
@@ -64,23 +64,15 @@
       <%= button_to "Categories", categories_path, class: "r-button", method: :get %>
       <%= button_to "Users", users_path, class: "r-button", method: :get %>
     </div>
+    
 
     <div id="content">
       <%= yield %>
     </div>
   </body>
 <script>
-  var msgs = document.getElementsByClassName("info");
-  for (var i = 0; i < msgs.length; i++) {
-    msgs[i].onclick = function(evt) {
-      var infopop = document.getElementById("noticediv");
-      infopop.style.right = "-900px";
-      infopop.style.opacity = 0;
-    };
-  }
-
-
 let burgerstate = 0;
+
 
 function Burger(){
     var burger = document.getElementById("burger");
@@ -98,6 +90,16 @@ function Burger(){
       console.log(burger.style.backgroundColor);
       }
 }
+function Infoclose(){
+
+      var infopop = document.getElementById("noticediv");
+      infopop.style.right = "-900px";
+      infopop.style.opacity = 0;
+}
+
+
+
+
 
 
 

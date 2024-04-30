@@ -433,6 +433,7 @@ header{
 #r-menu{
     display: none;
 }
+
 @media (max-width: 600px){
     #burger{
         position: fixed;
@@ -494,5 +495,30 @@ header{
         top: 0;
         z-index: 99999;
         background-color: transparent !important;
+    }
+    #r-questionbtn{
+        position: fixed;
+        bottom: 30px;
+        width: 100%;
+        height: auto;
+        z-index: 10;
+        display: grid;
+        justify-content: center;
+    }
+    #r-askbtn{
+        width: 190px;
+        padding: 10px 17px 10px 17px;
+        background-color: #00487D;
+        color: white;
+        font-size: 12px;
+        border: thin solid transparent;
+        border-radius: 8px;
+        position: relative;
+        transition: all 0.5s;
+        height: 40px;
+    }
+    #r-askbtn:hover{
+        background-color: #1267A6;
+        cursor: pointer;
     }
 }
