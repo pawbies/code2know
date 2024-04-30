@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   get "sessions/new" => "sessions#new", as: :new_session
   post "sessions" => "sessions#create", as: :sessions
   delete "session" => "sessions#destroy", as: :session
+
+  patch "helpful" => "answers#set_helpful", as: :helpful
   
 end

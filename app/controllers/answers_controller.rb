@@ -44,32 +44,54 @@ class AnswersController < ApplicationController
     
   end
 
+  def edit
+    
+    @answer = Answer.find_by(id: params[:id])
+    return unless require_user_or_admin @answer.user.id
+    
+  end
+
   def update
     @answer = Answer.find_by(id: params[:id])
+    return unless require_user_or_admin @answer.user.id
+    
+    if @answer.update(answer_params)
+      redirect_to origin_path(@answer), notice: "Updated question"
+    else
+      redirect_to origin_path(@answer), notice: "Could not update question"
+    end
+  end
 
+  def set_helpful
+    @answer = Answer.find_by(id: params[:id])
+    
     if @answer.question.nil?
       creator = @answer.answer.user.id
     else
       creator = @answer.question.user.id
     end
+    return unless require_user_or_admin creator    
 
-    return if require_user_or_admin creator
-    
-
-    @answer.update(answer_params)
-
-    if @answer.question.nil?
-      redirect_to answer_path(id: @answer.answer.id), notice: "Updated answer"
+    if @answer.update(helpful: params.require("answer")[:helpful])
+      redirect_to origin_path(@answer), notice: "Successfully changed state"
     else
-      redirect_to question_path(id: @answer.question.id), notice: "Updated answer"
+      redirect_to origin_path(@answer), notice: "Could not update state"
     end
-  end
 
+  end
 
   private
 
   def answer_params
-    params.require("answer").permit(:text, :helpful)
+    params.require("answer").permit(:text)
+  end
+
+  def origin_path answer
+    if answer.question.nil?
+      answer_path(id: answer.answer.id)
+    else
+      question_path(id: answer.question.id)
+    end
   end
   
 end

@@ -1,0 +1,14 @@
+<h1>Update Question</h1>
+
+<%= form_with model: @answer, url: answer_path(id: @answer.id), method: :patch do |form| %>
+
+<div>
+  <%= form.label :text %>
+  <%= form.text_field :text %>
+</div>
+
+<div>
+  <%= form.submit "Update question" %>
+</div>
+
+<% end %>

@@ -37,9 +37,13 @@
 
 <hr>
 
-<% if Current.user && (Current.user.id == @question.user.id || Current.user.role.permission >= 4) %>
+<% if Current.user && (Current.user.id == answer.user.id || Current.user.role.permission >= 4) %>
+<%= link_to "Update question", edit_answer_path(id: answer.id) %>
+<% end %>
 
-<%= form_with model: answer, url: answer_path(id: answer.id) do |form| %>
+
+<% if Current.user && (Current.user.id == @question.user.id || Current.user.role.permission >= 4) %>
+<%= form_with model: answer, url: helpful_path(id: answer.id) do |form| %>
 
 <div>
   <%= form.label :helpful %>
