@@ -76,10 +76,14 @@ let burgerstate = 0;
 
 function Burger(){
     var burger = document.getElementById("burger");
+    var items = document.getElementsByClassName("burgeritem");
     var menu = document.getElementById("r-menu");
     if (burgerstate == 0) { 
         menu.style.top = "60px"; 
         burgerstate = 1; 
+        //for (var i = 0; i < items.length; i++) {
+          //items[i].style.opacity = 0.5;
+          //}
         console.log("Burger() 60px");
     } else if (burgerstate == 1) {
         burgerstate = 0; 

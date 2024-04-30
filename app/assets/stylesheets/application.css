@@ -433,6 +433,9 @@ header{
 #r-menu{
     display: none;
 }
+#r-questionbtn{
+    display: none;
+}
 
 @media (max-width: 600px){
     #burger{
@@ -454,6 +457,10 @@ header{
         background-color: white;
         margin: 6px 0 6px 0;
         border-radius: 2px;
+        
+    }
+    .burgeritem:hover{
+        opacity: 0.5;
     }
     #r-menu{
         position: fixed;
@@ -504,6 +511,7 @@ header{
         z-index: 10;
         display: grid;
         justify-content: center;
+
     }
     #r-askbtn{
         width: 190px;
