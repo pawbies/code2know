@@ -457,7 +457,7 @@ header{
     }
     #r-menu{
         position: fixed;
-        top: -900px;
+        top: -500px;
         right: 0;
         background-color: #1D2022;
         display: block;

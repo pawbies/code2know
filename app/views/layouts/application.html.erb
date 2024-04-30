@@ -59,10 +59,10 @@
       <div id="burgercheckbox" onclick="Burger()"></div>
     </div>
     <div id="r-menu">
-          <%= button_to "Home", root_path, class: "r-button", method: :get %>
-      <%= button_to "Find questions", root_path, class: "r-button", method: :get %>
-      <%= button_to "Categories", categories_path, class: "r-button", method: :get %>
-      <%= button_to "Users", users_path, class: "r-button", method: :get %>
+          <%= button_to "Home", root_path, class: "r-button", method: :get, onclick: "Burger()" %>
+      <%= button_to "Find questions", root_path, class: "r-button", method: :get, onclick: "Burger()" %>
+      <%= button_to "Categories", categories_path, class: "r-button", method: :get, onclick: "Burger()" %>
+      <%= button_to "Users", users_path, class: "r-button", method: :get, onclick: "Burger()" %>
     </div>
     
 
@@ -84,7 +84,7 @@ function Burger(){
     } else if (burgerstate == 1) {
         burgerstate = 0; 
         console.log("Burger() -900px");
-        menu.style.top = "-900px";
+        menu.style.top = "-500px";
     } else{
       console.log("Burger Fail");
       console.log(burger.style.backgroundColor);
