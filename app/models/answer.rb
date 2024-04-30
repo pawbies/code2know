@@ -5,7 +5,15 @@ class Answer < ApplicationRecord
 
   has_many :answers
 
-  validates :text, length: { minimum: 0 }
-  validates :text, length: { maximum: 25 }
+  validates :text, presence: true, length: { within: 0..250 }
+  #validates :helpful, presence: true
+
+  after_initialize :set_false, unless: :persisted?
+
+  private
+
+  def set_false
+    self.helpful ||= false
+  end
   
 end  

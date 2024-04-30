@@ -52,7 +52,7 @@ end
 #---- Users ----
 
 users = [
-  { email: 'Gay@Gay', username: 'Gay', password: 'Gay', password_confirmation: 'Gay', rank: Rank.find_by(level: 11), xp: 1000, role: Role.find_by(name: "Counsel Member") },
+  { email: 'root@root.com', username: 'Administrator', password: '12345678', password_confirmation: '12345678', rank: Rank.find_by(level: 11), xp: 1000, role: Role.find_by(name: "Counsel Member") },
 ]
 
 users.each do |user|

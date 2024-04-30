@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
     
     @answer = Answer.new(answer_params)
     @answer.user = Current.user
-
+    
     if params[:source] == "question"
       @answer.question = Question.find_by(id: params[:id].to_i)
     elsif params[:source] == "answer"
@@ -30,6 +30,8 @@ class AnswersController < ApplicationController
         redirect_to question_path(id: @answer.question.id), alert: "Something went wrong"; return
       end
     else
+      puts @answer.errors.full_messages
+      puts @answer.helpful
       redirect_to users_path, alert: "Something went wrong"; return
     end
     
@@ -42,11 +44,32 @@ class AnswersController < ApplicationController
     
   end
 
+  def update
+    @answer = Answer.find_by(id: params[:id])
+
+    if @answer.question.nil?
+      creator = @answer.answer.user.id
+    else
+      creator = @answer.question.user.id
+    end
+
+    return if require_user_or_admin creator
+    
+
+    @answer.update(answer_params)
+
+    if @answer.question.nil?
+      redirect_to answer_path(id: @answer.answer.id), notice: "Updated answer"
+    else
+      redirect_to question_path(id: @answer.question.id), notice: "Updated answer"
+    end
+  end
+
 
   private
 
   def answer_params
-    params.require("answer").permit(:text)
+    params.require("answer").permit(:text, :helpful)
   end
   
 end

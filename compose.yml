@@ -6,8 +6,9 @@ services:
       - C2K_DATABASE_USER=root
       - C2K_DATABASE_PASSWORD=secret
     ports:
-      - 127.0.0.1:80:3000
-      - 127.0.0.1:443:3000
+      - 80:3000
+    depends_on:
+      - database_production
 
   database_production:
     image: 'postgres:latest'
@@ -15,8 +16,8 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=secret
-    ports:
-      - 5432:5432
+    #ports:
+    #  - 5432:5432
 
   pgadmin:
     image: 'dpage/pgadmin4:latest'
