@@ -1,7 +1,6 @@
 class RanksController < ApplicationController
-
   before_action :require_admin
-  
+
   def index
     @ranks = Rank.all
   end
@@ -20,12 +19,9 @@ class RanksController < ApplicationController
     end
   end
 
-
   private
 
   def rank_params
-
-    params.require("rank").permit(:name, :level, :threshold)
-    
+    params.require('rank').permit(:name, :level, :threshold)
   end
 end

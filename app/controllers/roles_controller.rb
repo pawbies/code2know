@@ -1,7 +1,6 @@
 class RolesController < ApplicationController
-
   before_action :require_admin
-  
+
   def index
     @roles = Role.all
   end
@@ -20,11 +19,9 @@ class RolesController < ApplicationController
     end
   end
 
-
   private
 
   def role_params
-    params.require("role").permit(:name, :permission)
+    params.require('role').permit(:name, :permission)
   end
-  
 end

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  before_action :fetch_user, only: %i[show edit update destroy]
+  before_action :require_this_user, only: %i[edit update destroy]
 
   def index
-    #flash.now[:alert] = "test"
     @users = User.all
   end
 
@@ -13,68 +14,48 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to users_path, notice: "Successfully created User"
+      redirect_to users_path, notice: 'Successfully created User'
       session[:user_id] = @user.id
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def show
-    @user = User.find_by(id: params[:id])
+  def show; end
 
-    if not @user.present?
-      redirect_to users_path, notice: "User does not exist"
-    end
-  end
-
-  def edit
-
-    if Current.user.nil?
-      redirect_to new_session_path, notice: "Need to be logged in!"; return
-    end
-    
-    require_user_or_admin params[:id]
-    
-    @user = User.find_by(id: params[:id])
-
-    if not @user.present?
-        redirect_to users_path, notice: "User does not exist"
-    end
-  end
+  def edit; end
 
   def update
-    @user = User.find_by(id: params[:id])
-
-    if not @user.present?
-      redirect_to users_path, notice: "User does not exist"
-    end
-
     if @user.update(user_params)
-      redirect_to users_path, notice: "Updated successfully"
+      redirect_to users_path, notice: 'Updated successfully'
     else
-      puts @user.errors.full_messages
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    require_user_or_admin params[:id]
-
     if Current.user.id == params[:id]
       Current.user = nil
       sessions[:user_id] = nil
     end
 
-    User.find_by(id: params[:id]).destroy
-    
-    redirect_to users_path, notice: "Deleted user"
+    @user.destoy
+
+    redirect_to users_path, notice: 'Deleted user'
   end
 
   private
 
-  def user_params
-    params.require("user").permit(:username, :email, :password, :password_confirmation, :xp)
+  def require_this_user
+    require_user_or_admin params[:id]
   end
-  
+
+  def fetch_user
+    @user = User.find_by(id: params[:id])
+    redirect_to user_path, notice: 'User does not exist' if @user.nil?
+  end
+
+  def user_params
+    params.require('user').permit(:username, :email, :password, :password_confirmation, :xp)
+  end
 end

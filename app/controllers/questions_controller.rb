@@ -1,16 +1,17 @@
 class QuestionsController < ApplicationController
+  before_action :fetch_question_from_id, only: %i[show edit update destroy]
+  before_action :require_some_user, only: %i[new create]
+  before_action :require_creator, only: %i[edit update destroy]
+
   def index
     @questions = Question.all.order('questions.created_at DESC')
   end
 
   def new
-    require_some_user
     @question = Question.new
   end
 
   def create
-    require_some_user()
-
     @question = Question.new(question_params)
     @question.user = Current.user
 
@@ -24,54 +25,36 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find_by(id: params[:id])
     @answer = Answer.new
   end
 
-  def edit
-    @question = Question.find_by(id: params[:id])
-    if @question.nil?
-      redirect_to questions_path, notice: 'Question not found'
-    end
-
-    require_user_or_admin @question.user.id
-
-  end
+  def edit; end
 
   def update
-    @question = Question.find_by(id: params[:id])
-    if @question.nil?
-      redirect_to questions_path, notice: 'Question not found'
-    end
-
-    require_user_or_admin @question.user.id
-
     if @question.update(question_params)
       redirect_to question_path(id: @question.id), notice: 'Question updated'
     else
-      flash.now[:notice] = 'Something went wrong'
       render :edit
     end
   end
 
-  def destory
-    @question = Question.find_by(id: params[:id])
-    if @question.nil?
-      redirect_to questions_path, notice: 'Question not found'
-    end
-
-    require_user_or_admin @question.user.id
-
+  def destroy
     @question.destroy
-
     redirect_to questions_path, notice: 'Deleted Question'
   end
 
-
   private
+
+  def require_creator
+    redirect_to question_path, notice: 'Require creator' unless require_user_or_admin @question.user.id
+  end
+
+  def fetch_question_from_id
+    @question = Question.find_by(id: params[:id])
+    redirect_to questions_path, notice: 'Question not found' if @question.nil?
+  end
 
   def question_params
     params.require('question').permit(:heading, :text)
   end
-
 end

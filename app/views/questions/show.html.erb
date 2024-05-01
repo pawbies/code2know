@@ -53,6 +53,12 @@
 <%= form.submit "Update" %>
 
 <% end %>
+
+<% if Current.user && (Current.user.id == answer.user.id || Current.user.id == @question.user.id || Current.user.role.permission >= 4) %>
+<%= button_to "Delete answer", answer_path(id: answer.id), method: :delete %>
+<% end %>
+
+
 <% end %>
 <% end %>
 
@@ -67,8 +73,9 @@
   <%= form.text_field :text, required: true %>
 </div>
 
-<%= hidden_field_tag 'source', 'question' %>
-<%= hidden_field_tag 'id', @question.id %>
+
+<input type="text" name="source" value="question" hidden>
+<input type="number" name="id" value="<%= @question.id %>" hidden>
 
 <div>
   <%= form.submit "Create Answer" %>
