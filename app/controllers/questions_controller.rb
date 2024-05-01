@@ -46,7 +46,7 @@ class QuestionsController < ApplicationController
   private
 
   def require_creator
-    redirect_to question_path, notice: 'Require creator' unless require_user_or_admin @question.user.id
+    require_user_or_admin @question.user.id
   end
 
   def fetch_question_from_id

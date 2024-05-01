@@ -19,13 +19,23 @@
 </div>
 
 <div>
-  <%= form.text_area :text, required: true, placeholder: "Form your question...", class: "forminput" %>
+  <%= form.text_area :text, required: true, placeholder: "Form your question...", class: "forminput", id: "markdown-content" %>
 </div>
 
 <div>
   <%= form.submit "Create new Question", class: "formbtn" %>
 </div>
 
+
 <% end %>
+
+<button id="preview-markdown" class="formbtn">Preview</button>
+
 </div>
 
+<div id="preview">
+</div>
+
+<% content_for :head do %>
+  <%= javascript_import_module_tag "preview" %>
+<% end %>

@@ -2,7 +2,7 @@
 <h1><%= @question.heading %></h1>
 
 <div>
-  <%= @question.text.nil? ? "Not available" : @question.text %>
+  <%= content_tag :div,  @question.text.nil? ? "Not available" : @question.text, class: "markdown-content" %>
 </div>
 
 <p>Created at <%= @question.created_at %></p>
@@ -88,4 +88,9 @@
 
   <%= link_to "Sign in to answer", new_session_path %>
 
+<% end %>
+
+
+<% content_for :head do %>
+  <%= javascript_import_module_tag "markdown_converter" %>
 <% end %>
