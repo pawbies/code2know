@@ -1,5 +1,5 @@
 <h1 class="quest-h1">Create new Question</h1>
-<div class="form-content">
+<div class="qu-content">
   
 <%= form_with model: @question, url: questions_path do |form| %>
 
@@ -15,15 +15,16 @@
 <% end %>
 
 <div>
-  <%= form.text_field :heading, required: true, placeholder: "Title of your question:", class: "forminput" %>
+  <%= form.text_field :heading, placeholder: "Title of your question:", class: "forminput", id: "qu-title"%>
 </div>
 
 <div>
-  <%= form.text_area :text, required: true, placeholder: "Form your question...", class: "forminput", id: "markdown-content" %>
+  <%= form.text_area :text, placeholder: "Form your question...", class: "forminput", id: "markdown-content" %>
 </div>
 
+
 <div>
-  <%= form.submit "Create new Question", class: "formbtn" %>
+  <%= form.submit "Create new Question", class: "formbtn", id: "createqu" %>
 </div>
 
 
