@@ -1,11 +1,12 @@
 class User < ApplicationRecord
   include ActiveModel::Dirty
   define_attribute_methods
-  
+
   belongs_to :rank
   belongs_to :role
   has_many :questions
-  
+  has_and_belongs_to_many :categories
+
   has_secure_password
 
   after_initialize :default_values, unless: :persisted?

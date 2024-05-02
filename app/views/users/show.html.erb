@@ -7,6 +7,17 @@
   Password: <%= @user.password_digest %>
 </p>
 
+<h3>Users Categories</h3>
+
+<% @user.categories.each do |category| %>
+
+<li>
+  <%= link_to category.name, category_path(id: category.id) %>
+</li>
+
+
+<% end %>
+
 <h3>Users Questions:</h3>
 
 <ul>
