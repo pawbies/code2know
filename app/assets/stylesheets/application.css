@@ -1,8 +1,30 @@
-.markdown-content {
+#markdown-content {
+    background-color: #333333;
+    height: 200px;
+    max-width: 80%;
+    min-height: 150px;
+    min-width: 80%;
+}
+/* #markdown-content:focus{
+    border: thin solid #1267A6;
+    filter: drop-shadow(0px 0px 20px #1267A6);
+} */
+#qu-title{
     background-color: #333333;
 }
 
-
+/* #qu-title:focus{
+    border: thin solid #1267A6;
+    filter: drop-shadow(0px 0px 20px #1267A6);
+} */
+#createqu:hover{
+    border: thin solid #1267A6;
+    filter: drop-shadow(0px 0px 20px #1267A6);
+}
+#formsignin:hover{
+    border: thin solid #1267A6;
+    filter: drop-shadow(0px 0px 20px #1267A6);
+}
 
 #notice{
 
@@ -80,11 +102,11 @@
     padding: 20px 0px 30px 0px;
 }
 .forminput{
-    width: 60%;
+    width: 80%;
     border: thin solid transparent;
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
-    margin: 5px;
+    margin: 15px 5px 15px 5px;
     background-color: #1D2022;
     color: white;
     
@@ -94,6 +116,16 @@
     background-color: #33393D;
 }
 .form-content{
+    background-color: #1D2022;
+    /* margin: 30px; */
+    padding: 20px 0px 50px 0px;
+    border-radius: 13px;
+    width: 100%;
+    /* border: thin solid #1267A6; */
+    text-align: center;
+    margin-top: 50px;
+}
+.qu-content{
     background-color: #1D2022;
     /* margin: 30px; */
     padding: 20px 0px 50px 0px;
@@ -219,6 +251,8 @@
     width: calc(100%-300px);
     height: calc(100%-200px);
     transition: all 0.5s;
+    display: grid;
+    justify-content: center;
     /* background-color: aquamarine; */
     
     /* background-color: grey !important; */
@@ -422,6 +456,16 @@ header{
         padding: 20px 20px 50px 20px;
         border-radius: 8px;
         width: 350px;
+        max-width: 800px;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .qu-content{
+        background-color: #1D2022;
+        /* margin: 30px; */
+        padding: 20px 20px 50px 20px;
+        border-radius: 8px;
+        width: 450px;
         max-width: 800px;
         text-align: center;
         margin-top: 50px;
