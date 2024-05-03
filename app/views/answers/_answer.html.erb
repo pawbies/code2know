@@ -1,0 +1,36 @@
+
+<% if answer.helpful %>
+<p style="color: green;">
+<% else %>
+</p>
+<% end %>
+  <%= answer.text %>
+</p>
+<%= link_to "Go to answer", answer_path(id: answer.id), method: :patch %>
+<small>By <%= answer.user.username %></small>
+
+<hr>
+
+<% if Current.user && (Current.user.id == answer.user.id || Current.user.role.permission >= 4) %>
+<%= link_to "Update question", edit_answer_path(id: answer.id) %>
+<% end %>
+
+
+<% if Current.user && (Current.user.id == @question.user.id || Current.user.role.permission >= 4) %>
+<%= form_with model: answer, url: helpful_path(id: answer.id) do |form| %>
+
+<div>
+  <%= form.label :helpful %>
+  <%= form.check_box :helpful %>
+</div>
+
+<%= form.submit "Update" %>
+
+<% end %>
+
+<% if Current.user && (Current.user.id == answer.user.id || Current.user.id == @question.user.id || Current.user.role.permission >= 4) %>
+<%= button_to "Delete answer", answer_path(id: answer.id), method: :delete %>
+<% end %>
+
+
+<% end %>

@@ -1,65 +1,25 @@
-
 <h1><%= @question.heading %></h1>
-
 <div>
   <%= content_tag :div,  @question.text.nil? ? "Not available" : @question.text, class: "markdown-content" %>
 </div>
-
 <p>Created at <%= @question.created_at %></p>
-
 <small>By <%= link_to @question.user.username, user_path(id: @question.user.id) %></small>
 
 <h2>Categories</h2>
-
 <ul>
-
 <% @question.categories.each do |category| %>
 
 <li><%= category.name %></li>
 
 <% end %>
-
 </ul>
 
 <h2>Answers</h2>
 
 <% @question.answers.each do |answer| %>
 
-<% if answer.helpful %>
-<p style="color: green;">
-<% else %>
-</p>
-<% end %>
-  <%= answer.text %>
-</p>
-<%= link_to "Go to answer", answer_path(id: answer.id), method: :patch %>
-<small>By <%= answer.user.username %></small>
+<%= render answer %>
 
-<hr>
-
-<% if Current.user && (Current.user.id == answer.user.id || Current.user.role.permission >= 4) %>
-<%= link_to "Update question", edit_answer_path(id: answer.id) %>
-<% end %>
-
-
-<% if Current.user && (Current.user.id == @question.user.id || Current.user.role.permission >= 4) %>
-<%= form_with model: answer, url: helpful_path(id: answer.id) do |form| %>
-
-<div>
-  <%= form.label :helpful %>
-  <%= form.check_box :helpful %>
-</div>
-
-<%= form.submit "Update" %>
-
-<% end %>
-
-<% if Current.user && (Current.user.id == answer.user.id || Current.user.id == @question.user.id || Current.user.role.permission >= 4) %>
-<%= button_to "Delete answer", answer_path(id: answer.id), method: :delete %>
-<% end %>
-
-
-<% end %>
 <% end %>
 
 <% if Current.user %>

@@ -1,0 +1,7 @@
+
+<div class="start-question">
+  <span class="qu-username"><%= question.user.username %></span>
+  <span class="qu-time"><%= question_date question %></span>
+  <h2 class="qu-title"><%= question.heading %></h2>
+  <%= link_to question_answers(question), question_path(id: question.id), class: "qu-answers" %>
+</div>
