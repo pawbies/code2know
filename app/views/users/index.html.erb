@@ -6,11 +6,11 @@
   <%= link_to user.username, user_path(id: user.id), class: "userlink" %>
 </h2>
 
-<p>
-  Rank: <%= user.rank.name %><br>
-  Level: <%= user.role.name %><br>
+
+<span>Rank: <%= user.rank.name %>
+Level: <%= user.role.name %>
   XP: <%= user.xp %>
-  <br>
+  </span>
 
   <!-- idk why emacs highlights the '>' sign as an error because it clearly works-->
   <% if Current.user && (Current.user.role.permission >= 4 || user.id == Current.user.id) %><br>

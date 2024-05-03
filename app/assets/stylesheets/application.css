@@ -78,19 +78,20 @@
 }
 .usersoverview{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-wrap: wrap;
+    display: grid;
     justify-content: center;
+
+    
 }
 .users{
     background-color: #23272A;
-    width: 300px;
+    width: auto;
+    
     padding: 15px;
     margin: 15px;
     border-radius: 9px;
     height: auto;
+    position: relative;
 }
 
 
@@ -251,8 +252,6 @@
     width: calc(100%-300px);
     height: calc(100%-200px);
     transition: all 0.5s;
-    display: grid;
-    justify-content: center;
     /* background-color: aquamarine; */
     
     /* background-color: grey !important; */

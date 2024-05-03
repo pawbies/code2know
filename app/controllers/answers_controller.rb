@@ -38,9 +38,16 @@ class AnswersController < ApplicationController
   end
 
   def set_helpful
+    if @answer.helpful == params.require('answer')[:helpful]
+      redirect_to origin_path(@answer)
+      return
+    end
+
     if @answer.update(helpful: params.require('answer')[:helpful])
+      @answer.user.update(xp: @answer.user.xp + 100)
       redirect_to origin_path(@answer), notice: 'Successfully changed state'
     else
+      @answer.user.update(xp: @answer.user.xp - 100)
       redirect_to origin_path(@answer), notice: 'Could not update state'
     end
   end
