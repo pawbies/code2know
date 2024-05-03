@@ -17,9 +17,9 @@
 <h2>Answers</h2>
 
 <% @question.answers.each do |answer| %>
-
-<%= render answer %>
-
+  <% cache answer do %>
+  <%= render answer %>
+  <% end %>
 <% end %>
 
 <% if Current.user %>

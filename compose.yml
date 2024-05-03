@@ -5,6 +5,7 @@ services:
     environment:
       - C2K_DATABASE_USER=root
       - C2K_DATABASE_PASSWORD=secret
+      - REDIS_URL=redis://cache:6379/0
     ports:
       - 80:3000
     depends_on:
@@ -16,8 +17,15 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=secret
-    #ports:
-    #  - 5432:5432
+    ports:
+      - 5432:5432
+
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - 6379:6379
+    command: redis-server --save 60 1 --loglevel warning
 
   pgadmin:
     image: 'dpage/pgadmin4:latest'

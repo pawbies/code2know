@@ -17,7 +17,6 @@
   </head>
 
   <body>
-
     <header>
         <h1 class="title">Code2Know</h1>
         <% if !Current.user.nil? %>
@@ -25,17 +24,21 @@
         <% end %>
 
 	<% if flash[:notice] %>
-  <div id="noticediv" onclick="Infoclose()">
-  <%= image_tag "closeicon.png", class: "info", id: "in" %><span id="notice"><%= flash[:notice] %>
-        </div>
-        <% end %>
+  <div data-controller="info">
+    <div id="noticediv" data-action="click->info#close" data-info-target="message">
+      <%= image_tag "closeicon.png", class: "info", id: "in" %><span id="notice">
+        <%= flash[:notice] %>
+    </div>
+  </div>
+  <% end %>
         
 
 	<% if flash[:alert] %>
         <p><%= flash[:alert] %></p>
-        <% end %>
-	
+<% end %>
     </header>
+
+
     <div id="leftsidebar">
     <div id="mainbutton">
       <%= button_to "+ ASK A QUESTION", new_question_path, id: "askbtn", method: :get %>
@@ -53,62 +56,27 @@
     <%= button_to "Logout", session_path, id: "loginbtn", method: :delete%>
     <% end %>
     </div>
-    </div> 
-    <div id="burger">
-      <div class="burgeritem"></div>
-      <div class="burgeritem"></div>
-      <div class="burgeritem"></div>
-      <div id="burgercheckbox" onclick="Burger()"></div>
     </div>
-    <div id="r-menu">
-          <%= button_to "Home", root_path, class: "r-button", method: :get, onclick: "Burger()" %>
-      <%= button_to "Find questions", root_path, class: "r-button", method: :get, onclick: "Burger()" %>
-      <%= button_to "Categories", categories_path, class: "r-button", method: :get, onclick: "Burger()" %>
-      <%= button_to "Users", users_path, class: "r-button", method: :get, onclick: "Burger()" %>
-    </div>
-    
+
+    <div data-controller="burger">
+      <div id="burger">
+        <div class="burgeritem"></div>
+        <div class="burgeritem"></div>
+        <div class="burgeritem"></div>
+        <div id="burgercheckbox" data-action="click->burger#toggle"></div>
+      </div>
+      <div id="r-menu" data-burger-target="menu">
+        <%= button_to "Home", root_path, class: "r-button", method: :get, data: { "action": "click->burger#toggle" } %>
+        <%= button_to "Find questions", root_path, class: "r-button", method: :get, data: { "action": "click->burger#toggle" } %>
+        <%= button_to "Categories", categories_path, class: "r-button", method: :get, data: { "action": "click->burger#toggle" } %>
+        <%= button_to "Users", users_path, class: "r-button", method: :get, data: { "action": "click->burger#toggle" } %>
+      </div>
+    <div>
+
 
     <div id="content">
       <%= yield %>
     </div>
+
   </body>
-<script>
-let burgerstate = 0;
-
-
-function Burger(){
-    var burger = document.getElementById("burger");
-    var items = document.getElementsByClassName("burgeritem");
-    var menu = document.getElementById("r-menu");
-    if (burgerstate == 0) { 
-        menu.style.top = "60px"; 
-        burgerstate = 1; 
-        //for (var i = 0; i < items.length; i++) {
-          //items[i].style.opacity = 0.5;
-          //}
-        console.log("Burger() 60px");
-    } else if (burgerstate == 1) {
-        burgerstate = 0; 
-        console.log("Burger() -900px");
-        menu.style.top = "-500px";
-    } else{
-      console.log("Burger Fail");
-      console.log(burger.style.backgroundColor);
-      }
-}
-function Infoclose(){
-
-      var infopop = document.getElementById("noticediv");
-      infopop.style.right = "-900px";
-      infopop.style.opacity = 0;
-}
-
-
-
-
-
-
-
-</script>
-
 </html>

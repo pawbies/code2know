@@ -1,11 +1,11 @@
 <h1 class="quest-h1">Recent Questions</h1>
 <div id="questionscontent">
 
+
 <% @questions.each do |question| %>
-
+    <% cache question do %>
     <%= render question %>
-
+    <% end %>
 <% end %>
 
 </div>
-
