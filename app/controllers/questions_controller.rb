@@ -19,7 +19,6 @@ class QuestionsController < ApplicationController
       Current.user.update(xp: Current.user.xp + 50)
       redirect_to questions_path, notice: 'Successfully created Question'
     else
-      flash.now[:alert] = 'Something is wrong'
       render :new, status: :unprocessable_entity
     end
   end

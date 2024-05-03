@@ -580,3 +580,34 @@ header{
         cursor: pointer;
     }
 }
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #dadada00;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+
+  }
+
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #353B40;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #00487D;
+    cursor: pointer;
+    z-index: 10000;
+
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: #dadada00;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+  }
