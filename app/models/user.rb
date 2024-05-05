@@ -19,6 +19,7 @@ class User < ApplicationRecord
   validates :xp, numericality: { only_integer: true }
   validates :xp, comparison: { less_than: 9223372036854775808 }
   validates :xp, comparison: { greater_than: -9223372036854775808 }
+  validate :pfp_is_image
 
   before_save :level_up #, if: :xp_changed?
 
@@ -31,11 +32,16 @@ class User < ApplicationRecord
   end
 
   def level_up
-    
     while self.rank.threshold > 0 && self.xp >= self.rank.threshold
       self.xp -= self.rank.threshold
       self.rank = Rank.find_by(level: self.rank.level + 1)
     end
   end
-  
+
+  def pfp_is_image
+    return unless pfp.attached? && !pfp.image?
+
+    pfp.purge
+    errors.add(:pfp, 'must be an image')
+  end
 end
