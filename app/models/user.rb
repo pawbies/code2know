@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  include ActiveModel::Dirty
-  define_attribute_methods
+  has_one_attached :pfp do |attachable|
+    attachable.variant :thumb, resize_to_limit: [100, 100]
+    attachable.variant :normal, resize_to_limit: [500, 500]
+  end
 
   belongs_to :rank
   belongs_to :role
@@ -18,9 +20,7 @@ class User < ApplicationRecord
   validates :xp, comparison: { less_than: 9223372036854775808 }
   validates :xp, comparison: { greater_than: -9223372036854775808 }
 
-
   before_save :level_up #, if: :xp_changed?
-  
 
   private
 

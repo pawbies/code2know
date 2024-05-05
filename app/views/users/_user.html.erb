@@ -2,6 +2,9 @@
 <div class="users">
 <h2>
   <%= link_to user.username, user_path(id: user.id), class: "userlink" %>
+  <% if user.pfp.attached? %>
+    <%= image_tag(user.pfp.variant(:thumb)) %>
+  <% end %>
 </h2>
 
 

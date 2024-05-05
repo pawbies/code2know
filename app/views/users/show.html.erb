@@ -1,6 +1,12 @@
 <% cache @user do %>
 <h1 class="title">Profile for <%= @user.username %></h1>
 
+<% if @user.pfp.attached? %>
+
+  <%= image_tag(@user.pfp.variant(:normal)) %>
+
+<%  end %>
+
 <p>
   Rank: <%= @user.rank.name %><br>
   Level: <%= @user.role.name %><br>
