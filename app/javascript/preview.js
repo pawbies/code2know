@@ -1,8 +1,6 @@
 import showdown from "showdown";
 
-console.log("Hello Preview")
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
     let converter = new showdown.Converter();
     let mdElem = document.querySelector("#markdown-content");
     let out = document.querySelector("#preview");
