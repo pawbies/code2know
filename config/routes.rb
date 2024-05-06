@@ -21,5 +21,8 @@ Rails.application.routes.draw do
   delete "session" => "sessions#destroy", as: :session
 
   patch "helpful" => "answers#set_helpful", as: :helpful
+
+  get "search/new" => "search#new", as: :new_search
+  post "search/show" => "search#show", as: :search
   
 end
