@@ -1,10 +1,10 @@
-<h1><%= @question.heading %></h1>
+<div id="qu-sh">
+<span id="sh-qu-username"><%= link_to @question.user.username, user_path(id: @question.user.id) %></span><br>
+<span class="sh-qu-time"><%= question_date @question %></span>
+<h1 id="sh-qu-title"><%= @question.heading %></h1>
 <div>
   <%= content_tag :div,  @question.text.nil? ? "Not available" : @question.text, class: "markdown-content" %>
 </div>
-<p>Created at <%= @question.created_at %></p>
-<small>By <%= link_to @question.user.username, user_path(id: @question.user.id) %></small>
-
 <h2>Categories</h2>
 <ul>
 <% @question.categories.each do |category| %>
@@ -13,6 +13,7 @@
 
 <% end %>
 </ul>
+</div>
 
 <h2>Answers</h2>
 

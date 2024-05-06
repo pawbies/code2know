@@ -1,3 +1,75 @@
+.sh-qu-time{
+    opacity: 0.3;
+    font-size: 17px;
+}
+#sh-qu-title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 92px;
+}
+#sh-qu-username a{
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+#qu-sh{
+    background-color: #1D2022;
+    max-width: 80%;
+    padding: 30px;
+    border-radius: 20px;
+}
+#qu-sh h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+#qu-sh h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+#qu-sh h3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+pre{
+    background-color: #252729;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: min-content;
+    overflow-x: scroll;
+}
+pre::-webkit-scrollbar {
+    width: 10px;
+    background-color: #dadada00;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+
+  }
+
+
+  pre::-webkit-scrollbar-thumb {
+    background-color: #353B40;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+
+  }
+
+  pre::-webkit-scrollbar-thumb:hover {
+    background-color: #00487D;
+    cursor: pointer;
+    z-index: 10000;
+
+  }
+
+  pre::-webkit-scrollbar-track {
+    background-color: #dadada00;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
 #markdown-content {
     background-color: #333333;
     height: 200px;
