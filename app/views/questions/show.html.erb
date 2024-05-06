@@ -1,7 +1,7 @@
 <div id="qu-sh">
 <span id="sh-qu-username"><%= link_to @question.user.username, user_path(id: @question.user.id) %></span><br>
-<span class="sh-qu-time"><%= question_date @question %></span>
-<h1 id="sh-qu-title"><%= @question.heading %></h1>
+<span class="sh-qu-time"><%= question_date @question %></span><br><br>
+<span id="sh-qu-title"><%= @question.heading %></span>
 <div>
   <%= content_tag :div,  @question.text.nil? ? "Not available" : @question.text, class: "markdown-content" %>
 </div>

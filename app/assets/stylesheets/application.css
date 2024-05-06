@@ -1,27 +1,27 @@
 .sh-qu-time{
     opacity: 0.3;
-    font-size: 17px;
+    font-size: 13px;
 }
 #sh-qu-title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 92px;
+    font-size: 25px;
 }
 #sh-qu-username a{
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     color: white;
-    font-size: 10px;
+    font-size: 15px;
 }
 #qu-sh{
     background-color: #1D2022;
     max-width: 80%;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 24px;
 }
 #qu-sh h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 #qu-sh h2{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -37,6 +37,7 @@ pre{
     border-radius: 10px;
     max-width: min-content;
     overflow-x: scroll;
+    font-size: 12px;
 }
 pre::-webkit-scrollbar {
     width: 10px;
