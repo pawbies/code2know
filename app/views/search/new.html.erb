@@ -1,0 +1,14 @@
+<h1>New Search</h1>
+
+<%= form_with url: search_path, data: { turbo: false } do |form| %>
+
+<div>
+    <p>Search Term:</p>
+    <%= form.text_field :query %>
+</div>
+
+<div>
+    <%= form.submit "Search" %>
+</div>
+
+<% end %>
