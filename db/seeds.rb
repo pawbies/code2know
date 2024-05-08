@@ -116,12 +116,15 @@ end
 
 textgen.each do |generator|
   2.times do
-    Question.create(
+    user = User.order('RANDOM()').first
+    user.update(xp: user.xp + 50)
+
+    Question.new(
       {
-        heading: Faker::Lorem.sentence(word_count: rand(1..3), supplemental: false, random_words_to_add: 0),
+        heading: Faker::Lorem.sentence(word_count: rand(1..5), supplemental: false, random_words_to_add: 0),
         text: generator.call,
-        user: User.order('RANDOM()').first
+        user: user
       }
-    )
+    ).save
   end
 end

@@ -1,4 +1,6 @@
 <h1 class="quest-h1">All Users</h1>
+
+<div class="usersoverview">
 <% @users.each do |user| %>
   <% cache user do %>
   <%= render user %>
