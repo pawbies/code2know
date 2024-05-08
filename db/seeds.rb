@@ -65,3 +65,63 @@ users.each do |user|
     u.role = user[:role]
   end
 end
+
+
+#----- random data
+
+chargen = [
+  -> { Faker::Movies::BackToTheFuture.character },
+  -> { Faker::Movies::HarryPotter.character },
+  -> { Faker::Movies::Hobbit.character },
+  -> { Faker::Movies::HowToTrainYourDragon.character },
+  -> { Faker::Movies::LordOfTheRings.character },
+  -> { Faker::Movies::StarWars.character },
+  -> { Faker::Movies::VForVendetta.character },
+  -> { Faker::TvShows::BreakingBad.character },
+  -> { Faker::TvShows::Spongebob.character },
+  -> { Faker::TvShows::Simpsons.character }
+
+]
+
+textgen = [
+  -> {  Faker::TvShows::FamilyGuy.quote },
+  -> {  Faker::TvShows::RickAndMorty.quote },
+  -> {  Faker::TvShows::Spongebob.quote },
+  -> {  Faker::TvShows::SouthPark.quote },
+  -> {  Faker::TvShows::Simpsons.quote },
+  -> {  Faker::Quote.famous_last_words },
+  -> {  Faker::Quote.yoda },
+  -> {  Faker::Movie.quote },
+  -> {  Faker::Movies::Hobbit.quote },
+  -> {  Faker::Movies::StarWars.quote },
+  -> {  Faker::Movies::VForVendetta.speech },
+  -> {  Faker::Movies::VForVendetta.quote },
+]
+
+chargen.each do |generator|
+  2.times do
+    User.create(
+      {
+        username: generator.call,
+        email: "#{Faker::Name.first_name}@#{Faker::Name.last_name}.com",
+        password: '12345678',
+        password_confirmation: '12345678',
+        rank: Rank.find_by(level: 1),
+        xp: 0,
+        role: Role.find_by(name: 'Basic')
+      }
+    )
+  end
+end
+
+textgen.each do |generator|
+  2.times do
+    Question.create(
+      {
+        heading: Faker::Lorem.sentence(word_count: rand(1..3), supplemental: false, random_words_to_add: 0),
+        text: generator.call,
+        user: User.order('RANDOM()').first
+      }
+    )
+  end
+end
