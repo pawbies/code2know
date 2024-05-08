@@ -29,8 +29,10 @@
 	<% if flash[:notice] %>
   <div data-controller="info">
     <div id="noticediv" data-action="click->info#close" data-info-target="message">
-      <%= image_tag "closeicon.png", class: "info", id: "in" %><span id="notice">
+      <%= image_tag "closeicon.png", class: "info", id: "in" %>
+      <span id="notice">
         <%= flash[:notice] %>
+      </span>
     </div>
   </div>
   <% end %>
@@ -74,12 +76,20 @@
         <%= button_to "Categories", categories_path, class: "r-button", method: :get, data: { "action": "click->burger#toggle" } %>
         <%= button_to "Users", users_path, class: "r-button", method: :get, data: { "action": "click->burger#toggle" } %>
       </div>
-    <div>
+      </div>
 
 
     <div id="content">
       <%= yield %>
     </div>
+
+
+    <footer>
+     <%= link_to "Imprint", imprint_path, class: "f-link" %>
+     <%= link_to "Contact", contact_path, class: "f-link" %>
+     <%= link_to "Privacy", privacy_path, class: "f-link" %>
+
+    </footer>
 
   </body>
 </html>

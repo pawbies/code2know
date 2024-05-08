@@ -610,3 +610,31 @@ body::-webkit-scrollbar {
     cursor: pointer;
     z-index: 10000;
   }
+
+footer {
+
+    background-color: #1D2022;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-left: 200px;
+
+    position: fixed;
+    width: calc(100vw - 200px);
+    bottom: 0%;
+    height: 3vh;
+
+    z-index: 100000000;
+}
+.f-link {
+    text-decoration: none;
+    color: white;
+}
+footer:hover > .f-link {
+    opacity: 0.69;
+}
+footer:hover > .f-link:hover {
+    opacity: 1;
+}

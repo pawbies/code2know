@@ -24,5 +24,9 @@ Rails.application.routes.draw do
 
   get "search/new" => "search#new", as: :new_search
   post "search/show" => "search#show", as: :search
+
+  get "imprint" => "legal#imprint", as: :imprint
+  get "contact" => "legal#contact", as: :contact
+  get "privacy" => "legal#privacy", as: :privacy
   
 end
