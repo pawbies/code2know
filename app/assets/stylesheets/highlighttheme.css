@@ -20,8 +20,8 @@
 */
 
 .hljs {
-  background: rgb(31, 31, 31) ;
   color: #fff;
+  font-family: Consolas;
 }
 
 .hljs-doctag,
