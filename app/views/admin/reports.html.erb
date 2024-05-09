@@ -1,0 +1,19 @@
+<h1>Reports</h1>
+
+<% @reported_questions.each do |rq| %>
+
+<div>
+    <h3>Question <b><%= rq.heading %></b> by <%= rq.user.username %></h3>
+    <%= button_to 'Go to question', question_path(rq), method: :get %>
+    <%= button_to 'Remove question', question_path(rq), method: :delete %>
+    <ul>
+        <% rq.reports.each do |report| %>
+            <li>
+                R: <%= report.message %> by <%= link_to report.user.username, user_path(report.user) %>
+                <%= button_to 'Dismiss', report_path(report), method: :delete %>
+            </li>
+        <% end %>
+    </ul>
+</div>
+
+<% end %>

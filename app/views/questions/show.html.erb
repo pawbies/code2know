@@ -1,9 +1,13 @@
 <div id="qu-sh">
 <span id="sh-qu-username"><%= link_to @question.user.username, user_path(id: @question.user.id) %></span><br>
+
+
+
 <span class="sh-qu-time"><%= question_date @question %></span><br><br>
 <span id="sh-qu-title"><%= @question.heading %></span>
+
 <div>
-  <%= content_tag :div,  @question.text.nil? ? "Not available" : @question.text, class: "markdown-content" %>
+  <%= content_tag :div, @question.text, class: "markdown-content" %>
 </div>
 <h2>Categories</h2>
 <ul>
@@ -14,6 +18,20 @@
 <% end %>
 </ul>
 </div>
+
+<h3>Report</h3>
+<%= form_with url: add_report_path do |form|%>
+  <div>
+    <%= form.text_field :message, placeholder: "Report message" %>
+  </div>
+  <div>
+    <%= form.submit "Report" %>
+  </div>
+
+
+  <input type="number" name="id" value="<%= @question.id %>" hidden>
+
+<% end %>
 
 <h2>Answers</h2>
 

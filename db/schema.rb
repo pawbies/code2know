@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_05_150539) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_09_104744) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -87,6 +87,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_150539) do
     t.index ["name"], name: "index_ranks_on_name", unique: true
   end
 
+  create_table "reports", force: :cascade do |t|
+    t.integer "question_id", null: false
+    t.integer "user_id", null: false
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_reports_on_question_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.integer "permission"
@@ -112,9 +122,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_150539) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "answers"
-  add_foreign_key "answers", "questions"
-  add_foreign_key "answers", "users"
-  add_foreign_key "questions", "users"
+  add_foreign_key "answers", "questions", on_delete: :cascade
+  add_foreign_key "answers", "users", on_delete: :cascade
+  add_foreign_key "reports", "questions", on_delete: :cascade
+  add_foreign_key "reports", "users", on_delete: :cascade
   add_foreign_key "users", "ranks"
   add_foreign_key "users", "roles"
 end

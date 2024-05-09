@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :questions
   resources :answers
+  resources :reports
 
 
   get "sessions/new" => "sessions#new", as: :new_session
@@ -28,5 +29,8 @@ Rails.application.routes.draw do
   get "imprint" => "legal#imprint", as: :imprint
   get "contact" => "legal#contact", as: :contact
   get "privacy" => "legal#privacy", as: :privacy
-  
+
+  post "report" => "questions#report", as: :add_report
+
+  get "admin/reports" => "admin#reports", as: :admin_reports
 end

@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :fetch_question_from_id, only: %i[show edit update destroy]
-  before_action :require_some_user, only: %i[new create]
+  before_action :fetch_question_from_id, only: %i[show edit update destroy report]
+  before_action :require_some_user, only: %i[new create report]
   before_action :require_creator, only: %i[edit update destroy]
 
   def index
@@ -40,6 +40,11 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     redirect_to questions_path, notice: 'Deleted Question'
+  end
+
+  def report
+    @question.reports.create(user: Current.user, message: params[:message])
+    redirect_to question_path(@question), notice: "Thank you for your support"
   end
 
   private
