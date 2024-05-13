@@ -684,7 +684,7 @@ body::-webkit-scrollbar {
     z-index: 10000;
   }
 
-footer {
+  footer {
 
     background-color: #1D2022;
 
@@ -698,16 +698,18 @@ footer {
     width: calc(100vw - 200px);
     bottom: 0%;
     height: 3vh;
+    padding: 5px 0 5px 0;
 
-    z-index: 100000000;
+    z-index: 100;
+    border-top: 4px solid #17181A;
 }
 .f-link {
     text-decoration: none;
     color: white;
+    opacity: 0.8;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 11px;
 }
-footer:hover > .f-link {
-    opacity: 0.69;
-}
-footer:hover > .f-link:hover {
+.f-link:hover{
     opacity: 1;
 }
