@@ -122,10 +122,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_09_104744) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "answers"
-  add_foreign_key "answers", "questions", on_delete: :cascade
-  add_foreign_key "answers", "users", on_delete: :cascade
-  add_foreign_key "reports", "questions", on_delete: :cascade
-  add_foreign_key "reports", "users", on_delete: :cascade
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
+  add_foreign_key "reports", "questions"
+  add_foreign_key "reports", "users"
   add_foreign_key "users", "ranks"
   add_foreign_key "users", "roles"
 end
