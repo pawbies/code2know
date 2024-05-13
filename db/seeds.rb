@@ -98,6 +98,20 @@ textgen = [
   -> {  Faker::Movies::VForVendetta.quote },
 ]
 
+headgen = [
+  -> {  Faker::TvShows::FamilyGuy.quote },
+  -> {  Faker::TvShows::RickAndMorty.quote },
+  -> {  Faker::TvShows::Spongebob.quote },
+  -> {  Faker::TvShows::SouthPark.quote },
+  -> {  Faker::TvShows::Simpsons.quote },
+  -> {  Faker::Quote.famous_last_words },
+  -> {  Faker::Quote.yoda },
+  -> {  Faker::Movie.quote },
+  -> {  Faker::Movies::Hobbit.quote },
+  -> {  Faker::Movies::StarWars.quote },
+  -> {  Faker::Movies::VForVendetta.quote },
+]
+
 chargen.each do |generator|
   2.times do
     User.create(
@@ -115,13 +129,16 @@ chargen.each do |generator|
 end
 
 textgen.each do |generator|
-  2.times do
+  5.times do
     user = User.order('RANDOM()').first
     user.update(xp: user.xp + 50)
 
+    h = ''
+    h = headgen.sample.call while h.length > 75 || h.empty?
+
     Question.new(
       {
-        heading: Faker::Lorem.sentence(word_count: rand(1..5), supplemental: false, random_words_to_add: 0),
+        heading: h,
         text: generator.call,
         user: user
       }

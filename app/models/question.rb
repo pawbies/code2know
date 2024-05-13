@@ -6,7 +6,7 @@ class Question < ApplicationRecord
 
   validates :heading, presence: true
   validates :heading, length: { minimum: 0 }
-  validates :heading, length: { maximum: 50 }
+  validates :heading, length: { maximum: 75 }
 
   validates :text, presence: true
   validates :text, length: { minimum: 0 }
