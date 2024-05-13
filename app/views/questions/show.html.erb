@@ -1,6 +1,12 @@
 <div id="qu-sh">
 <span id="sh-qu-username"><%= link_to @question.user.username, user_path(id: @question.user.id) %></span><br>
 
+<% if @question.user.verified? %>
+  <div>
+    <p>User is verified</p>
+  </div>
+<% end %>
+
 
 <% cache @question do %>
 

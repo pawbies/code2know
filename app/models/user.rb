@@ -29,6 +29,7 @@ class User < ApplicationRecord
     self.role ||= Role.find_by(permission: 1)
     self.rank ||= Rank.find_by(level: 1)
     self.xp   ||= 0
+    self.verified ||= false
   end
 
   def level_up
