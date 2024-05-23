@@ -71,3 +71,4 @@ end
 
 
 gem "faker", "~> 3.3"
+gem "select2-rails"

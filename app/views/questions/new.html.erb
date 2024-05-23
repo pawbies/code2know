@@ -22,6 +22,9 @@
   <%= form.text_area :text, placeholder: "Form your question...", class: "forminput", id: "markdown-content" %>
 </div>
 
+<div>
+  <%= form.collection_select :category_ids, Category.all, :id, :name, {}, { multiple: true, id: "category-select", class: "forminput selectize", id: "cats" } %>
+</div>
 
 <div>
   <%= form.submit "Create new Question", class: "formbtn", id: "createqu" %>

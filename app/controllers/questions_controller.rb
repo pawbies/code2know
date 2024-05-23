@@ -59,6 +59,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require('question').permit(:heading, :text)
+    params.require('question').permit(:heading, :text, :category_ids => [])
   end
 end

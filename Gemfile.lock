@@ -212,6 +212,7 @@ GEM
     ruby-vips (2.2.1)
       ffi (~> 1.12)
     rubyzip (2.3.2)
+    select2-rails (4.0.13)
     selenium-webdriver (4.18.1)
       base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
@@ -270,6 +271,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.2)
   redis (>= 4.0.1)
+  select2-rails
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

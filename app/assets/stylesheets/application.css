@@ -713,3 +713,7 @@ body::-webkit-scrollbar {
 .f-link:hover{
     opacity: 1;
 }
+
+.selectize-control {
+    margin-left: 30px;
+}

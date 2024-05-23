@@ -13,6 +13,10 @@
 </div>
 
 <div>
+  <%= form.collection_select :category_ids, Category.all, :id, :name, { prompt: "Select categories" }, { multiple: true, id: "category-select" } %>
+</div>
+
+<div>
   <%= form.submit "Update Question" %>
 </div>
 
