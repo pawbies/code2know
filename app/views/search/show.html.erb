@@ -14,3 +14,10 @@
     <li><%= link_to user.username, user_path(user) %></li>
 <% end %>
 </ul>
+
+<h2>Categories</h2>
+<ul>
+<% @categories.each do |category| %>
+    <li><%= link_to category.name, category_path(category) %></li>
+<% end %>
+</ul>

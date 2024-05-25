@@ -325,6 +325,7 @@ pre::-webkit-scrollbar {
     width: calc(100%-300px);
     height: calc(100%-200px);
     transition: all 0.5s;
+    margin-bottom: 5vw;
     /* background-color: aquamarine; */
     
     /* background-color: grey !important; */
@@ -503,7 +504,7 @@ header{
         margin: 80px 0 0 210px;
         width: calc(100%-200px);
         height: calc(100%-60px);
-        
+        margin-bottom: 5vw;
         /* background-color: grey !important; */
     }
     #questionscontent{

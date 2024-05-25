@@ -2,8 +2,10 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+import hljs from "highlight.js";
+import showdown from "showdown";
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbo:load', function() {
   const selectElements = document.querySelectorAll('.selectize');
   selectElements.forEach(function(selectElement) {
     $(selectElement).selectize({
@@ -11,4 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
         persist: false,
     });
   });
+});
+
+document.addEventListener("turbo:load", () => {
+    let converter = new showdown.Converter();
+
+    document.querySelectorAll(".markdown-content").forEach((elem) => {
+        let markdown = elem.innerHTML;
+        let html = converter.makeHtml(markdown);
+        elem.innerHTML = html;
+    });
+
+    hljs.highlightAll();
+});
+
+document.addEventListener("turbo:load", () => {
+    let converter = new showdown.Converter();
+    let mdElem = document.querySelector("#markdown-content");
+    let out = document.querySelector("#preview");
+
+    document.querySelector("#preview-markdown").onclick = () => {
+        let markdown = mdElem.value;
+        let html = converter.makeHtml(markdown);
+        out.innerHTML = html;
+    };
 });

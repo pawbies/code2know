@@ -8,5 +8,6 @@ class SearchController < ApplicationController
 
     @users = User.where('LOWER(username) LIKE ?', "%#{lower}%")
     @questions = Question.where('LOWER(heading) LIKE ?', "%#{lower}%")
+    @categories = Category.where('LOWER(name) LIKE ?', "%#{lower}%")
   end
 end

@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   before_action :require_creator, only: %i[edit update destroy]
 
   def index
-    @questions = Question.all.order('questions.created_at DESC')
+    @questions = Question.all.order('questions.created_at DESC').limit(35)
   end
 
   def new
