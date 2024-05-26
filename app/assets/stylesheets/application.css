@@ -1,10 +1,30 @@
+
+.usersh2{
+    display: flex;
+    align-items: center;
+}
+
+.users-verified{
+    height: 26px;
+    margin: 0 0px 0 3px;
+}
+.verified{
+    height: 20px;
+    margin: 0 0px 0 5px;
+}
+
+#qu-creator{
+    display: flex;
+    align-items: center;
+}
 .sh-qu-time{
     opacity: 0.3;
     font-size: 13px;
+    margin-left: 20px;
 }
 #sh-qu-title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 25px;
+    font-size: 30px;
 }
 #sh-qu-username a{
     text-decoration: none;
@@ -12,12 +32,31 @@
     font-weight: bold;
     color: white;
     font-size: 15px;
+    transition: all 0.5s;
+}
+#sh-qu-username a:hover{
+    color: #1267A6;
 }
 #qu-sh{
     background-color: #1D2022;
     max-width: 80%;
     padding: 30px;
     border-radius: 24px;
+}
+#qu-answers{
+    background-color: #1D2022;
+    max-width: 80%;
+    padding: 10px 30px 30px 30px;
+    border-radius: 24px;
+    margin-top: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+#qu-report{
+    width: 100%;
+    height: auto;
+    display: grid;
+    align-items: right;
 }
 #qu-sh h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -151,14 +190,15 @@ pre::-webkit-scrollbar {
 }
 .usersoverview{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: grid;
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     
 }
 .users{
     background-color: #23272A;
-    width: auto;
+    width: 300px;
     
     padding: 15px;
     margin: 15px;

@@ -46,6 +46,15 @@
   <%= form.number_field :xp %>
 </div>
 
+<% if Current.user.role.permission >= 4 %>
+
+<div>
+  <%= form.label :verified %>
+  <%= form.check_box :verified %>
+</div>
+
+<% end %>
+
 <div>
   <%= form.submit "Update" %>
 </div>

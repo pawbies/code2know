@@ -1,18 +1,20 @@
+
 <div id="qu-sh">
-<span id="sh-qu-username"><%= link_to @question.user.username, user_path(id: @question.user.id) %></span><br>
+<div id="qu-creator">
+<span id="sh-qu-username"><%= link_to @question.user.username, user_path(id: @question.user.id) %></span>
 
 <% if @question.user.verified? %>
-  <div>
-    <p>User is verified</p>
-  </div>
+    <%= image_tag "VERIFIED.png", class: "verified"%>
 <% end %>
-
-
 <% cache @question do %>
 
 <span class="sh-qu-time"><%= question_date @question %></span><br><br>
-<span id="sh-qu-title"><%= @question.heading %></span>
+</div>
 
+
+
+
+<span id="sh-qu-title"><%= @question.heading %></span>
 
 <div>
   <%= content_tag :div, @question.text, class: "markdown-content" %>
@@ -25,24 +27,27 @@
 
 <% end %>
 </ul>
-</div>
+
 
 <% end %>
 
-<h3>Report</h3>
+<div id="qu-report">
+
+<h3>Report this question</h3>
 <%= form_with url: add_report_path do |form|%>
   <div>
-    <%= form.text_field :message, placeholder: "Report message" %>
+    <%= form.text_field :message, placeholder: "Reason for the report:" %>
   </div>
   <div>
     <%= form.submit "Report" %>
   </div>
-
+</div>
 
   <input type="number" name="id" value="<%= @question.id %>" hidden>
 
 <% end %>
-
+</div>
+<div id="qu-answers">
 <h2>Answers</h2>
 
 <% @question.answers.each do |answer| %>
@@ -78,7 +83,7 @@
   <%= link_to "Sign in to answer", new_session_path %>
 
 <% end %>
-
+</div>
 
 <% content_for :head do %>
   <%= javascript_import_module_tag "markdown_converter" %>
