@@ -652,6 +652,23 @@ header{
         background-color: #1267A6;
         cursor: pointer;
     }
+    footer {
+        background-color: #1D2022;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 0;
+        position: fixed;
+        
+        bottom: -1px;
+        height: 3vh;
+        padding: 5px 0 5px 0;
+        left: 0;
+        z-index: 100;
+        border-top: 2px solid #17181A;
+        width: calc(100% - 0px);
+        min-width: 100%;
+    }
 }
 body::-webkit-scrollbar {
     width: 10px;
@@ -685,24 +702,19 @@ body::-webkit-scrollbar {
     z-index: 10000;
   }
 
-  footer {
 
+footer {
     background-color: #1D2022;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    margin-left: 200px;
-
     position: fixed;
-    width: calc(100vw - 200px);
-    bottom: 0%;
-    height: 3vh;
+    width: calc(100% - 200px);
+    bottom: 0;
+    right: 0;
+    border-top: 2px solid #17181A;
     padding: 5px 0 5px 0;
-
-    z-index: 100;
-    border-top: 4px solid #17181A;
+    height: 3vh;
 }
 .f-link {
     text-decoration: none;
