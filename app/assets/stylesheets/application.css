@@ -1,4 +1,61 @@
+.qu-report{
+    width: 200px;
+    border: thin solid transparent;
+    border-radius: 5px;
+    background-color: #282c2e;
+    color: white;
+    height: 30px;
+    font-size: 12px;
+    padding: 4px 8px 4px 8px;
 
+    
+}
+.qu-report:focus{
+    outline: none;
+    background-color: #33393D;
+}
+.qu-report-btn{
+    width: 200px;
+    background-color: #111316;
+    color: white;
+    font-size: 12px;
+    border: thin solid transparent;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.5s;
+    height: 30px;
+    padding: 4px 8px 4px 8px;
+    margin: 10px 0 0 0;
+
+}
+.qu-report-btn:hover{
+    background-color: #23272A;
+    cursor: pointer;
+}
+.sh-qu-cat-items{
+    background-color: #33373a;
+    width: auto;
+    height: auto;
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+    user-select: none;
+    margin: 8px 5px 8px 5px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.701);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.sh-qu-cat-items:hover{
+    background-color: #404244;
+    cursor: pointer;
+}
+#sh-qu-cat{
+    max-width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
 .usersh2{
     display: flex;
     align-items: center;
