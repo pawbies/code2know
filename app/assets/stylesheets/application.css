@@ -1,5 +1,7 @@
 .qu-report{
-    width: 200px;
+    width: 196px;
+    padding: 0;
+    margin: 0;
     border: thin solid transparent;
     border-radius: 5px;
     background-color: #282c2e;
@@ -15,7 +17,9 @@
     background-color: #33393D;
 }
 .qu-report-btn{
-    width: 200px;
+    width: 213.5px;
+    padding: 0;
+    margin: 0;
     background-color: #111316;
     color: white;
     font-size: 12px;
@@ -23,7 +27,7 @@
     border-radius: 8px;
     position: relative;
     transition: all 0.5s;
-    height: 30px;
+    height: 40px;
     padding: 4px 8px 4px 8px;
     margin: 10px 0 0 0;
 
@@ -43,7 +47,7 @@
     font-size: 12px;
     color: rgba(255, 255, 255, 0.701);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    text-decoration: none;
 }
 .sh-qu-cat-items:hover{
     background-color: #404244;

@@ -22,7 +22,7 @@
 <div id="sh-qu-cat">
 <% @question.categories.each do |category| %>
 
-<span class="sh-qu-cat-items"><%= category.name %></span>
+<%= link_to category.name, category_path(category), class: "sh-qu-cat-items" %>
 
 <% end %>
 </div>
@@ -83,6 +83,3 @@
 <% end %>
 </div>
 
-<% content_for :head do %>
-  <%= javascript_import_module_tag "markdown_converter" %>
-<% end %>
