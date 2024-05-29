@@ -19,14 +19,13 @@
 <div>
   <%= content_tag :div, @question.text, class: "markdown-content" %>
 </div>
-<h2>Categories</h2>
-<ul>
+<div id="sh-qu-cat">
 <% @question.categories.each do |category| %>
 
-<li><%= category.name %></li>
+<%= link_to category.name, category_path(category), class: "sh-qu-cat-items" %>
 
 <% end %>
-</ul>
+</div>
 
 
 <% end %>
@@ -36,10 +35,10 @@
 <h3>Report this question</h3>
 <%= form_with url: add_report_path do |form|%>
   <div>
-    <%= form.text_field :message, placeholder: "Reason for the report:" %>
+    <%= form.text_field :message, class: "qu-report", placeholder: "Reason for the report:" %>
   </div>
   <div>
-    <%= form.submit "Report" %>
+    <%= form.submit "Report", class: "qu-report-btn" %>
   </div>
 </div>
 
@@ -58,13 +57,12 @@
 
 <% if Current.user %>
 
-<h2>Add an Answer</h2>
+<h3>Add an Answer</h3>
 
 <%= form_with model: @answer, url: answers_path do |form| %>
 
 <div>
-  <%= form.label :text %>
-  <%= form.text_field :text, required: true %>
+  <%= form.text_field :text, required: true, class: "qu-report" %>
 </div>
 
 
@@ -72,7 +70,7 @@
 <input type="number" name="id" value="<%= @question.id %>" hidden>
 
 <div>
-  <%= form.submit "Create Answer" %>
+  <%= form.submit "Create Answer", class: "qu-report-btn" %>
 </div>
 
 
@@ -85,6 +83,3 @@
 <% end %>
 </div>
 
-<% content_for :head do %>
-  <%= javascript_import_module_tag "markdown_converter" %>
-<% end %>
