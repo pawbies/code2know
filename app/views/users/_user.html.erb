@@ -1,6 +1,6 @@
 <div class="users">
 <h2 class="usersh2">
-  <%= link_to user.username, user_path(id: user.id), class: "userlink" %>
+  <%= link_to user.username, user_path(user), class: "userlink" %>
   <% if user.pfp.attached? %>
     <%= image_tag(user.pfp.variant(:thumb)) %>
   <% end %>
@@ -15,7 +15,8 @@ Level: <%= user.role.name %><br>
   XP: <%= user.xp %><br>
   </span>
 
-  <% if Current.user && (Current.user.role.permission >= 4 || user.id == Current.user.id) %><br>
-  <%= link_to "Edit", edit_user_path(id: user.id), class: "editlink" %>
+  <% if Current.user && (Current.user.role.permission >= 4 || user.id == Current.user.id) %>
+    <br>
+    <%= link_to "Edit", edit_user_path(user), class: "editlink" %>
   <% end %>
 </div>

@@ -32,7 +32,10 @@ document.addEventListener("turbo:load", () => {
     let mdElem = document.querySelector("#markdown-content");
     let out = document.querySelector("#preview");
 
-    document.querySelector("#preview-markdown").onclick = () => {
+    let prev = document.querySelector("#preview-markdown");
+    if (prev == null) return;
+
+    prev.onclick = () => {
         let markdown = mdElem.value;
         let html = converter.makeHtml(markdown);
         out.innerHTML = html;
