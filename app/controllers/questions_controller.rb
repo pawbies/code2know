@@ -54,7 +54,7 @@ class QuestionsController < ApplicationController
   end
 
   def fetch_question_from_id
-    @question = Question.find_by(id: params[:id])
+    @question = Question.find_by(id: params[:id].to_i)
     redirect_to questions_path, notice: 'Question not found' if @question.nil?
   end
 

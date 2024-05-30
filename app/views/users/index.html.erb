@@ -2,8 +2,7 @@
 
 <div class="usersoverview">
 <% @users.each do |user| %>
-  <% cache user do %>
+
   <%= render user %>
-  <% end %>
 <% end %>
 </div>

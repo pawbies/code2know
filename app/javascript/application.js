@@ -5,17 +5,7 @@ import "controllers"
 import hljs from "highlight.js";
 import showdown from "showdown";
 
-document.addEventListener('turbo:load', function() {
-  const selectElements = document.querySelectorAll('.selectize');
-  selectElements.forEach(function(selectElement) {
-    $(selectElement).selectize({
-        delimiter: " - ",
-        persist: false,
-    });
-  });
-});
-
-document.addEventListener("turbo:load", () => {
+function converting() {
     let converter = new showdown.Converter();
 
     document.querySelectorAll(".markdown-content").forEach((elem) => {
@@ -25,9 +15,10 @@ document.addEventListener("turbo:load", () => {
     });
 
     hljs.highlightAll();
-});
 
-document.addEventListener("turbo:load", () => {
+}
+
+function preview() {
     let converter = new showdown.Converter();
     let mdElem = document.querySelector("#markdown-content");
     let out = document.querySelector("#preview");
@@ -40,4 +31,19 @@ document.addEventListener("turbo:load", () => {
         let html = converter.makeHtml(markdown);
         out.innerHTML = html;
     };
-});
+}
+
+function multiselect() {
+   const selectElements = document.querySelectorAll('.selectize');
+    selectElements.forEach(function(selectElement) {
+        $(selectElement).selectize({
+            delimiter: " - ",
+            persist: false,
+        });
+    });
+}
+
+document.addEventListener('turbo:load', multiselect);
+document.addEventListener("turbo:load", converting);
+document.addEventListener("turbo:load", preview);
+

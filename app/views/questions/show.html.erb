@@ -1,4 +1,3 @@
-
 <div id="qu-sh">
 <div id="qu-creator">
 <span id="sh-qu-username"><%= link_to @question.user.username, user_path(id: @question.user.id) %></span>
@@ -34,6 +33,7 @@
 
 <h3>Report this question</h3>
 <%= form_with url: add_report_path do |form|%>
+  <input type="number" name="id" value="<%= @question.id %>" hidden>
   <div>
     <%= form.text_field :message, class: "qu-report", placeholder: "Reason for the report:" %>
   </div>
@@ -41,8 +41,6 @@
     <%= form.submit "Report", class: "qu-report-btn" %>
   </div>
 </div>
-
-  <input type="number" name="id" value="<%= @question.id %>" hidden>
 
 <% end %>
 </div>
