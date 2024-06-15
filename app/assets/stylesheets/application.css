@@ -290,6 +290,20 @@ pre::-webkit-scrollbar {
     outline: none;
     background-color: #33393D;
 }
+.searchinput{
+    width: 80%;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    border: thin solid white;
+    margin: 15px 5px 15px 5px;
+    background-color: #1D2022;
+    color: white;
+    
+}
+.searchinput:focus{
+    outline: none;
+    background-color: #33393D;
+}
 .form-content{
     background-color: #1D2022;
     /* margin: 30px; */
