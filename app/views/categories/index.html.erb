@@ -1,10 +1,10 @@
-<h1 class="quest-h1">All Categories</h1>
+<h1 class="quest-h1">Categories</h1>
 
 <ul>
 
   <% @categories.each do |category| %>
   
-  <li><%= link_to category.name, category_path(id: category.id) %></li>
+  <%= link_to category.name, category_path(id: category.id), class: "sh-qu-cat-items" %><br><br>
 
   <% end %>
 
